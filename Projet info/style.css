@@ -1,0 +1,181 @@
+.body-dark {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(6px);
+}
+
+.navbar .nav-link {
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #9fc3ff !important;
+    transform: translateY(-1px);
+}
+
+.hero-solar {
+    min-height: 100vh;
+    padding-top: 80px;
+    background-image: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero-solar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(0,0,40,0.4), rgba(0,0,0,0.92));
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.text-glow {
+    text-shadow: 0 0 16px rgba(180, 200, 255, 1);
+}
+
+.bg-card {
+    background: rgba(10, 10, 35, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.bg-modal {
+    background: radial-gradient(circle at top, #060619, #02020b);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 991.98px) {
+    .hero-solar {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-solar {
+        padding-top: 90px;
+    }
+    .hero-solar h1 {
+        font-size: 2rem;
+    }
+    .hero-solar .lead {
+        font-size: 1rem;
+    }
+    .card-img-top {
+        max-height: 230px;
+        object-fit: cover;
+    }
+}
+
+.navbar-brand {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1;
+}
+
+.card-img-top {
+    height: 400px;
+    object-fit: cover;
+}
+
+.source-logo {
+    height: 200px;      
+    width: 100%;       
+    object-fit: contain; 
+    padding: 10px;       
+}
+
+.page-astronautes {
+    background-image: url("https://s2.best-wallpaper.net/wallpaper/1440x900/1901/Solar-system-planets-jupiter-universe_1440x900.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.page-missions {
+    background-image: url("https://img.maxisciences.com/article/1280/espace/la-terre-depuis-l-iss_af7aa5a22a57ef6ffa9ede4ecb3ce6a5804cf9f4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.page-sciences {
+    background-image: url("https://img.freepik.com/photos-premium/vue-interieur-station-spatiale_1072138-53754.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.bg-card {
+    background: rgba(10, 10, 35, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 0 40px rgba(100, 150, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bg-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 60px rgba(150, 200, 255, 0.3);
+}
+
+/* Bouton pro */
+.btn-deep-scan {
+    border: 1px solid #9fc3ff;
+    color: #9fc3ff;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-deep-scan:hover {
+    background-color: #9fc3ff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(159,195,255,0.6);
+}
+
+.fade-section {
+    transition: all 0.5s ease;
+}
+
+.fade-section.collapse.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-section.collapse {
+    opacity: 0;
+    transform: translateY(20px);
+}

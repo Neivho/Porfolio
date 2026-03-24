@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À propos du Portugal : population, capitale, langue, salaire moyen, gastronomie, culture et géographie.">
+    <title>À propos du Portugal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-flag-fill me-2"></i>Portugal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#lisbonne">Lisbonne</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#porto">Porto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sintra">Sintra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#algarve">Algarve</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#obidos">Óbidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="apropos.html">À propos</a>
+                    </li>
+                </ul>
+                <a href="https://fr.wikipedia.org/wiki/Portugal" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-wikipedia me-1"></i> Wikipédia
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== EN-TÊTE DE PAGE ===================== -->
+    <header class="apropos-hero d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="display-4 fw-bold mb-3">À propos du Portugal</h1>
+            <p class="lead mb-0">Tout ce qu'il faut savoir sur ce magnifique pays d'Europe du Sud</p>
+        </div>
+    </header>
+
+    <!-- ===================== INFOS CLÉS ===================== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Informations essentielles</h2>
+                <p class="text-muted">Les chiffres clés du Portugal en un coup d'œil</p>
+                <hr class="mx-auto my-3" style="width: 80px; border-color: #e74c3c; border-width: 3px;">
+            </div>
+
+            <!-- Cartes d'infos clés -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-people-fill fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Population</h5>
+                        <p class="text-muted mb-0">Environ <strong>10,3 millions</strong> d'habitants (2024)</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-building fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Capitale</h5>
+                        <p class="text-muted mb-0"><strong>Lisbonne</strong> (Lisboa), fondée il y a plus de 3 000 ans</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-translate fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Langue officielle</h5>
+                        <p class="text-muted mb-0"><strong>Portugais</strong> — parlé par 260 millions de personnes dans le monde</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-currency-euro fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Monnaie</h5>
+                        <p class="text-muted mb-0"><strong>Euro (€)</strong> — membre de la zone euro depuis 1999</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-cash-stack fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Salaire moyen</h5>
+                        <p class="text-muted mb-0">Environ <strong>1 500 € brut/mois</strong>. Le SMIC est de <strong>870 €/mois</strong> (2024)</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4 info-card">
+                        <i class="bi bi-sun-fill fs-1 text-danger mb-3"></i>
+                        <h5 class="fw-bold">Climat</h5>
+                        <p class="text-muted mb-0"><strong>Méditerranéen</strong> — plus de 300 jours de soleil par an</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GÉOGRAPHIE & SAVIEZ-VOUS ===================== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Géographie</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Superficie :</strong> 92 212 km² (métropole)</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Frontière :</strong> Seul voisin terrestre : l'Espagne</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Littoral :</strong> 1 794 km de côtes atlantiques</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Point culminant :</strong> Mont Pico (2 351 m) aux Açores</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Régions autonomes :</strong> Açores et Madère</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-star-fill text-danger me-2"></i>Le saviez-vous ?</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Le Portugal est le <strong>plus ancien État-nation d'Europe</strong> (frontières inchangées depuis 1249)</li>
+                            <li class="mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Le <strong>pont Vasco de Gama</strong> à Lisbonne mesure 17,2 km — le plus long d'Europe</li>
+                            <li class="mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Le <strong>Fado</strong> est inscrit au patrimoine immatériel de l'UNESCO depuis 2011</li>
+                            <li class="mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Les <strong>Pastéis de Nata</strong> sont préparés depuis 1837 dans la pâtisserie de Belém</li>
+                            <li class="mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i>Le Portugal a <strong>17 sites classés au patrimoine mondial</strong> de l'UNESCO</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GASTRONOMIE & CULTURE ===================== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Gastronomie & Culture</h2>
+                <p class="text-muted">La richesse culinaire et culturelle portugaise</p>
+                <hr class="mx-auto my-3" style="width: 80px; border-color: #e74c3c; border-width: 3px;">
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-cup-hot-fill text-danger me-2"></i>Cuisine traditionnelle</h4>
+                        <p>La cuisine portugaise est riche et variée, influencée par les échanges maritimes :</p>
+                        <ul>
+                            <li class="mb-2"><strong>Bacalhau</strong> (morue) — plus de 365 recettes, une pour chaque jour de l'année !</li>
+                            <li class="mb-2"><strong>Pastéis de Nata</strong> — flans pâtissiers croustillants à la crème</li>
+                            <li class="mb-2"><strong>Francesinha</strong> — sandwich emblématique de Porto, nappé de sauce</li>
+                            <li class="mb-2"><strong>Caldo Verde</strong> — soupe traditionnelle au chou et chorizo</li>
+                            <li class="mb-2"><strong>Sardines grillées</strong> — incontournables lors des fêtes de Santo António</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm p-4 h-100">
+                        <h4 class="fw-bold mb-3"><i class="bi bi-music-note-beamed text-danger me-2"></i>Art & Traditions</h4>
+                        <p>La culture portugaise se distingue par :</p>
+                        <ul>
+                            <li class="mb-2"><strong>Le Fado</strong> — musique mélancolique née dans les quartiers populaires de Lisbonne</li>
+                            <li class="mb-2"><strong>Les Azulejos</strong> — carreaux de faïence décoratifs omniprésents depuis le XVe siècle</li>
+                            <li class="mb-2"><strong>Le liège</strong> — le Portugal produit 50% du liège mondial</li>
+                            <li class="mb-2"><strong>Le football</strong> — Cristiano Ronaldo, Eusébio et une passion nationale</li>
+                            <li class="mb-2"><strong>Les fêtes populaires</strong> — Santos Populares en juin, Carnaval, pèlerinages à Fátima</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== HISTOIRE RAPIDE ===================== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Histoire en bref</h2>
+                <p class="text-muted">Les grandes dates qui ont marqué le Portugal</p>
+                <hr class="mx-auto my-3" style="width: 80px; border-color: #e74c3c; border-width: 3px;">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="timeline">
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <span class="badge bg-danger fs-6 px-3 py-2">1143</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5 class="fw-bold mb-1">Naissance du Portugal</h5>
+                                    <p class="text-muted mb-0">Le Traité de Zamora reconnaît le Portugal comme royaume indépendant sous <strong>Afonso Henriques</strong>, premier roi du Portugal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <span class="badge bg-danger fs-6 px-3 py-2">XVe s.</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5 class="fw-bold mb-1">Les Grandes Découvertes</h5>
+                                    <p class="text-muted mb-0"><strong>Henri le Navigateur</strong> lance l'ère des explorations. <strong>Vasco de Gama</strong> atteint l'Inde (1498) et <strong>Pedro Álvares Cabral</strong> découvre le Brésil (1500).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <span class="badge bg-danger fs-6 px-3 py-2">1755</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5 class="fw-bold mb-1">Le tremblement de terre de Lisbonne</h5>
+                                    <p class="text-muted mb-0">Un séisme dévastateur détruit Lisbonne. Le <strong>Marquis de Pombal</strong> dirige la reconstruction avec un plan urbanistique moderne et révolutionnaire.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <span class="badge bg-danger fs-6 px-3 py-2">1974</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5 class="fw-bold mb-1">La Révolution des Œillets</h5>
+                                    <p class="text-muted mb-0">Le <strong>25 avril 1974</strong>, une révolution pacifique met fin à la dictature de Salazar/Caetano. Des œillets sont placés dans les canons des fusils, symbole de liberté.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm p-4 mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-2 text-center">
+                                    <span class="badge bg-danger fs-6 px-3 py-2">1986</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <h5 class="fw-bold mb-1">Entrée dans l'Union Européenne</h5>
+                                    <p class="text-muted mb-0">Le Portugal rejoint la <strong>Communauté Économique Européenne</strong> (aujourd'hui UE), marquant le début d'une modernisation rapide du pays.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BOUTON RETOUR ===================== -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h3 class="section-title mb-3">Envie de découvrir les destinations ?</h3>
+            <p class="text-muted mb-4">Retournez à l'accueil pour explorer les 5 lieux incontournables du Portugal.</p>
+            <a href="index.html" class="btn btn-lg btn-portugal">
+                <i class="bi bi-arrow-left-circle me-2"></i> Retour à l'accueil
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="py-4 text-center text-white">
+        <div class="container">
+            <p class="mb-1"><i class="bi bi-flag-fill me-2"></i>Patrimoine du Portugal &copy; 2026</p>
+            <p class="mb-0 small">
+                Site éducatif &mdash; 
+                <a href="https://fr.wikipedia.org/wiki/Portugal" target="_blank" class="text-white text-decoration-underline">
+                    Voir le Portugal sur Wikipédia
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

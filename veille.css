@@ -1,0 +1,63 @@
+/* --- Veille Page Styles --- */
+
+/* Hero */
+.veille-hero {
+    min-height: 35vh;
+    background: radial-gradient(circle at 50% 80%, #2b004d 0%, transparent 60%);
+    padding-top: 40px;
+}
+
+/* Sections mensuelles */
+.month-section {
+    margin-bottom: 40px;
+}
+
+.month-header {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+}
+
+.month-header h3 {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.month-header h3 i {
+    color: var(--main-purple);
+    margin-right: 10px;
+}
+
+/* Rendre les dots cliquables sur la page veille */
+.veille-dot-group {
+    cursor: pointer;
+}
+
+.veille-dot-group:hover .veille-month {
+    color: var(--text-white);
+}
+
+/* Tag de source d'article */
+.veille-source-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--main-purple);
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    padding: 3px 12px;
+    letter-spacing: 0.3px;
+}
+
+/* Images uniformes pour tous les articles de veille */
+.veille-article-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    display: block;
+    background-color: #1a1a2e;
+}

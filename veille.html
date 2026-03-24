@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique | Alexis FARIA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="veille.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand fw-bold" href="index.html">PORTFOLIO<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn-contact-purple text-center" href="https://padlet.com" target="_blank"
+                            id="padlet-link">
+                            <i class="fas fa-th-large"></i> Mon Padlet
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- En-tête -->
+    <header class="veille-hero d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Veille <span>Technologique</span></h1>
+            <p class="lead text-gray mt-3">L'IA dans le diagnostic médical — Résumés mensuels</p>
+        </div>
+    </header>
+
+    <!-- Frise chronologique interactive -->
+    <section class="py-5 bg-darker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="veille-timeline-container">
+                        <div class="veille-timeline-line"></div>
+                        <div class="veille-timeline-dots">
+                            <div class="veille-dot-group" data-month="11" data-target="dec">
+                                <div class="veille-dot"></div>
+                                <span class="veille-month">Décembre</span>
+                            </div>
+                            <div class="veille-dot-group" data-month="0" data-target="jan">
+                                <div class="veille-dot"></div>
+                                <span class="veille-month">Janvier</span>
+                            </div>
+                            <div class="veille-dot-group" data-month="1" data-target="fev">
+                                <div class="veille-dot"></div>
+                                <span class="veille-month">Février</span>
+                            </div>
+                            <div class="veille-dot-group" data-month="2" data-target="mar">
+                                <div class="veille-dot"></div>
+                                <span class="veille-month">Mars</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenu mensuel -->
+    <section class="py-5">
+        <div class="container">
+
+            <!-- ══════════════ DÉCEMBRE 2025 ══════════════ -->
+            <div class="month-section" id="dec">
+                <div class="month-header">
+                    <h3><i class="fas fa-calendar"></i> Décembre 2025</h3>
+                </div>
+
+                <!-- Article 1 -->
+                <div class="card project-card p-4 mb-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article1.jpg" class="veille-article-img shadow-lg" alt="FDA AI Devices">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">📰 Radiology Business — Déc. 2025</span>
+                            <h4 class="text-white mb-2 mt-2">295 dispositifs IA approuvés par la FDA en 2025</h4>
+                            <p class="text-gray">La FDA a publié sa mise à jour de décembre 2025 : <strong>295
+                                    dispositifs médicaux IA</strong> ont obtenu une autorisation sur l'année, dont 56
+                                nouveaux en radiologie ajoutés en décembre. Le total dépasse désormais <strong>1 300
+                                    appareils autorisés</strong>, dont 80 % en imagerie médicale. Parmi les leaders :
+                                Aidoc, GE Healthcare et Roche Molecular.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">FDA</span>
+                                <span class="badge-tool">Radiologie</span>
+                                <span class="badge-tool">510(k)</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://radiologybusiness.com" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="card project-card p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article2.webp" class="veille-article-img shadow-lg"
+                                alt="GE Healthcare Pristina">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">📰 GE HealthCare — Déc. 2025</span>
+                            <h4 class="text-white mb-2 mt-2">GE HealthCare : 120 autorisations FDA et Pristina Recon DL
+                            </h4>
+                            <p class="text-gray">GE HealthCare atteint <strong>120 autorisations FDA</strong> pour ses
+                                dispositifs IA, se positionnant comme le leader mondial en nombre de clearances. Sur ses
+                                nouveaux produits, <strong>Pristina Recon DL</strong> utilise le deep learning pour
+                                améliorer la qualité des mammographies, offrant aux radiologues des images plus nettes
+                                et plus précises pour la détection du cancer du sein.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">Deep Learning</span>
+                                <span class="badge-tool">Mammographie</span>
+                                <span class="badge-tool">GE Healthcare</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.gehealthcare.com" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════ JANVIER 2026 ══════════════ -->
+            <div class="month-section" id="jan">
+                <div class="month-header">
+                    <h3><i class="fas fa-calendar"></i> Janvier 2026</h3>
+                </div>
+
+                <!-- Article 1 -->
+                <div class="card project-card p-4 mb-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article3.webp" class="veille-article-img shadow-lg"
+                                alt="OMS Rapport IA Santé">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">🏛️ OMS (WHO) — 7 Janv. 2026</span>
+                            <h4 class="text-white mb-2 mt-2">Rapport OMS : L'IA en santé en Europe, un cadre juridique
+                                urgent</h4>
+                            <p class="text-gray">L'Organisation Mondiale de la Santé publie son rapport <em>"AI in
+                                    Health: State of Readiness across the WHO European Region"</em> le 7 janvier 2026.
+                                Il révèle que <strong>32 pays</strong> utilisent déjà des outils d'IA pour le
+                                diagnostic, mais que <strong>moins d'un pays sur 10</strong> dispose de normes de
+                                responsabilité. L'OMS appelle à une régulation éthique urgente pour protéger les
+                                patients.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">OMS / WHO</span>
+                                <span class="badge-tool">Éthique IA</span>
+                                <span class="badge-tool">Europe</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.who.int/europe" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="card project-card p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article4.webp" class="veille-article-img shadow-lg"
+                                alt="Agents IA Diagnostic">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">📰 Diagnostic Imaging — Janv. 2026</span>
+                            <h4 class="text-white mb-2 mt-2">L'IA dans le Point d'Inflexion de la Radiologie 2026</h4>
+                            <p class="text-gray">Un article de référence de <em>Diagnostic Imaging</em> de janvier 2026
+                                prédit que les plateformes IA réussies seront celles intégrant le <strong>contexte
+                                    clinique</strong>, l'adaptabilité et une intégration fluide dans les workflows
+                                radiologiques. Plus de <strong>1 200 dispositifs médicaux IA</strong> ont reçu le
+                                clearance FDA, avec 86 % concentrés en radiologie et imagerie diagnostique.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">Workflow IA</span>
+                                <span class="badge-tool">Radiologie</span>
+                                <span class="badge-tool">Intégration clinique</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.diagnosticimaging.com" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════ FÉVRIER 2026 ══════════════ -->
+            <div class="month-section" id="fev">
+                <div class="month-header">
+                    <h3><i class="fas fa-calendar"></i> Février 2026</h3>
+                </div>
+
+                <!-- Article 1 -->
+                <div class="card project-card p-4 mb-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article5.webp" class="veille-article-img shadow-lg"
+                                alt="AMIR-GPT Radiologie">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">🔬 Intelligent Medicine / EurekaAlert — Févr. 2026</span>
+                            <h4 class="text-white mb-2 mt-2">AMIR-GPT : L'IA qui recommande l'imagerie médicale idéale
+                            </h4>
+                            <p class="text-gray">Des chercheurs du <strong>Beijing Friendship Hospital</strong> publient
+                                dans la revue <em>Intelligent Medicine</em> (février 2026) le modèle
+                                <strong>AMIR-GPT</strong>. Ce modèle IA fournit des recommandations d'imagerie médicale
+                                alignées sur les guides cliniques officiels pour des scénarios variés, réduisant les
+                                erreurs de prescription d'examens radiologiques et améliorant la pertinence
+                                diagnostique.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">AMIR-GPT</span>
+                                <span class="badge-tool">Guideline IA</span>
+                                <span class="badge-tool">Imagerie</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.eurekalert.org" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="card project-card p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/Article6.webp" class="veille-article-img shadow-lg"
+                                alt="IA Cancer Prostate Urologie">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">🔬 EMJ Reviews / EAU 2026 — Févr. 2026</span>
+                            <h4 class="text-white mb-2 mt-2">IA + IRM : Révolution dans le diagnostic du cancer de la
+                                prostate</h4>
+                            <p class="text-gray">Des recherches présentées au <strong>41ème Congrès de l'Association
+                                    Européenne d'Urologie (EAU 2026)</strong> démontrent que l'IA intégrée à l'IRM
+                                améliore significativement la décision de biopsie prostatique. Les médecins assistés par
+                                IA identifient mieux les cancers cliniquement significatifs et réduisent les biopsies
+                                inutiles, améliorant à la fois l'efficacité et la précision diagnostique.</p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">IRM + IA</span>
+                                <span class="badge-tool">Oncologie</span>
+                                <span class="badge-tool">EAU 2026</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.emjreviews.com" target="_blank"
+                                class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════ MARS 2026 ══════════════ -->
+            <div class="month-section" id="mar">
+                <div class="month-header">
+                    <h3><i class="fas fa-calendar"></i> Mars 2026</h3>
+                </div>
+
+                <!-- Article 1 -->
+                <div class="card project-card p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-3">
+                            <img src="images/article7.webp" class="veille-article-img shadow-lg"
+                                alt="Merlin Stanford NIH">
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="veille-source-tag">🏛️ NIH / Nature — 4 Mars 2026</span>
+                            <h4 class="text-white mb-2 mt-2">Merlin (Stanford / NIH) : 81% de précision sur les scanners
+                                3D abdominaux</h4>
+                            <p class="text-gray">Publié le <strong>4 mars 2026 dans Nature</strong>, l'outil
+                                <strong>Merlin</strong> développé par une équipe du Dr Akshay Chaudhari (Stanford
+                                University) financée par le NIH analyse des scanners CT abdominaux 3D. Il atteint
+                                <strong>81 % de précision</strong> sur des centaines de diagnostics et prédit le
+                                développement de maladies chroniques à 5 ans avec 75 % de précision. Parallèlement, un
+                                sondage AMA de mars 2026 révèle que <strong>80 % des médecins</strong> utilisent
+                                désormais l'IA professionnellement.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tool">Merlin / Stanford</span>
+                                <span class="badge-tool">NIH</span>
+                                <span class="badge-tool">Nature Journal</span>
+                                <span class="badge-tool">CT 3D</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <a href="https://www.nih.gov" target="_blank" class="btn-purple-visit d-block py-2 mb-2">
+                                Lire l'article <i class="fas fa-external-link-alt ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="text-center py-5 border-top border-secondary">
+        <p class="text-gray mt-3">© 2026 Alexis FARIA</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Illumine le mois actuel sur la frise
+        (function () {
+            const currentMonth = new Date().getMonth();
+            const dotGroups = document.querySelectorAll('.veille-dot-group');
+            dotGroups.forEach(function (group) {
+                const month = parseInt(group.getAttribute('data-month'));
+                if (month === currentMonth) {
+                    group.querySelector('.veille-dot').classList.add('active');
+                    group.querySelector('.veille-month').classList.add('active');
+                }
+            });
+        })();
+
+        // Clic sur un mois → scroll vers la section correspondante
+        document.querySelectorAll('.veille-dot-group').forEach(function (group) {
+            group.addEventListener('click', function () {
+                const target = group.getAttribute('data-target');
+                const section = document.getElementById(target);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+/* --- Variables Globales --- */
+:root {
+    --bg-black: #050505;
+    --bg-darker: #0d0d0f;
+    --bg-card: #161618;
+    --main-purple: #a855f7;
+    --glow-purple: rgba(168, 85, 247, 0.15);
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+}
+
+/* --- Base --- */
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+span { color: var(--main-purple); }
+.text-purple { color: var(--main-purple); }
+.text-gray { color: var(--text-gray); }
+.bg-darker { background-color: var(--bg-darker); }
+
+/* --- Navbar --- */
+.custom-navbar {
+    background-color: rgba(5, 5, 5, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 18px 0;
+}
+
+.navbar-nav .nav-link { 
+    color: var(--text-white) !important; 
+    font-size: 0.9rem; 
+    margin: 0 15px; 
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover { 
+    color: var(--main-purple) !important; 
+}
+
+.btn-contact-purple {
+    background-color: var(--main-purple) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 25px !important;
+}
+
+/* --- Grille de compétences --- */
+.skills-grid {
+    max-width: 380px;
+    margin-left: auto;
+}
+
+.badge-skill {
+    background: #1e102d;
+    color: var(--main-purple);
+    margin: 6px;
+    padding: 12px 0;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    flex: 0 1 calc(33.33% - 12px);
+    text-align: center;
+    min-width: 100px;
+}
+
+/* --- Timeline (Parcours) --- */
+.timeline { 
+    border-left: 2px solid var(--main-purple); 
+    padding-left: 35px; 
+    max-width: 900px; 
+    margin: auto; 
+}
+
+.timeline-item { 
+    margin-bottom: 45px; 
+    position: relative; 
+}
+
+.timeline-item::before {
+    content: ''; 
+    position: absolute; 
+    left: -44px; 
+    top: 6px; 
+    width: 16px; 
+    height: 16px;
+    background: var(--main-purple); 
+    border-radius: 50%; 
+    box-shadow: 0 0 15px var(--main-purple);
+}
+
+/* --- Hero & Projects --- */
+.hero-section { 
+    height: 85vh; 
+    background: radial-gradient(circle at 90% 10%, #2b004d 0%, transparent 50%); 
+}
+
+.btn-purple-main { 
+    background: var(--main-purple); 
+    color: white; 
+    padding: 14px 35px; 
+    border-radius: 10px; 
+    font-weight: 600; 
+    border: none; 
+    transition: 0.3s;
+}
+
+.btn-outline-custom { 
+    border: 1px solid #333; 
+    color: white; 
+    padding: 14px 35px; 
+    border-radius: 10px; 
+    transition: 0.3s;
+    background: transparent;
+}
+
+.project-card { 
+    background: var(--bg-card); 
+    border: 1px solid #2d2d2d; 
+    border-radius: 20px; 
+    transition: 0.4s; 
+}
+
+.project-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px var(--glow-purple); 
+}
+
+/* --- Sous-titre de section --- */
+.section-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-white);
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.section-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--main-purple);
+    border-radius: 4px;
+}
+
+/* --- Cartes Projets Professionnels --- */
+.project-pro-card {
+    border-color: rgba(168, 85, 247, 0.25) !important;
+    background: linear-gradient(135deg, #161618 0%, #1a0f2a 100%);
+}
+
+.project-pro-card:hover {
+    border-color: var(--main-purple) !important;
+}
+
+/* --- Badge année --- */
+.pro-year-badge {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    color: var(--main-purple);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Petits badges de technologie --- */
+.badge-tool-sm {
+    background: #1a0f2a;
+    color: var(--main-purple);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+/* --- Carte Cybersécurité --- */
+.project-cyber-card {
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    background: linear-gradient(135deg, #161618 0%, #1a0f2e 50%, #1a1018 100%) !important;
+}
+
+.project-cyber-card:hover {
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.25) !important;
+}
+
+.cyber-icon-box {
+    width: 64px;
+    height: 64px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-purple-visit {
+    background-color: transparent;
+    border: 1px solid var(--main-purple);
+    color: var(--main-purple);
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-purple-visit:hover {
+    background-color: var(--main-purple);
+    color: white;
+}
+
+.border-purple-light {
+    border: 1px solid rgba(168, 85, 247, 0.5) !important;
+    background: rgba(168, 85, 247, 0.02);
+}
+
+.badge-tool {
+    background: #1e102d;
+    color: var(--main-purple);
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    font-size: 0.9rem;
+}
+
+/* --- Formulaire de Contact (Inputs) --- */
+.custom-input {
+    background-color: #0d0d0f !important;
+    border: 1px solid #2d2d2d !important;
+    color: white !important;
+    padding: 12px 15px !important;
+    border-radius: 10px !important;
+    transition: 0.3s;
+}
+
+.custom-input:focus {
+    border-color: var(--main-purple) !important;
+    box-shadow: 0 0 10px var(--glow-purple) !important;
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #555;
+}
+
+/* --- Réseaux Sociaux (Colonne & Animation) --- */
+.social-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Assure la visibilité des icônes de marques */
+.social-link i {
+    width: 35px;
+    font-size: 1.5rem;
+    color: var(--main-purple); /* Force la couleur violette */
+    display: flex;
+    justify-content: center;
+}
+
+.social-link span {
+    color: white; /* Pseudo en blanc */
+    font-size: 0.95rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateX(10px);
+}
+
+.social-link:hover span {
+    color: var(--main-purple) !important;
+}
+
+/* AJOUTS POUR SECTION E4 */
+#pills-tab .btn-outline-custom.active {
+    background-color: var(--main-purple) !important;
+    border-color: var(--main-purple) !important;
+    color: white !important;
+}
+
+/* --- Footer --- */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Uniformisation des images techniques */
+.img-standard {
+    width: 100%;
+    height: 250px; /* Hauteur fixe pour l'alignement */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    object-position: top;
+    border-radius: 10px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-standard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px var(--glow-purple);
+    border-color: var(--main-purple);
+}
+
+/* Ajustement des colonnes pour les images */
+.task-description {
+    margin-bottom: 25px;
+}
+
+.task-description h5 {
+    color: var(--text-white);
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* À ajouter à la fin de ton style.css */
+@media (min-width: 768px) {
+    #about h5 {
+        text-align: right;
+        border-left: none !important;
+        border-right: 3px solid var(--main-purple);
+        padding-right: 15px;
+    }
+}
+
+.skills-grid {
+    max-width: 380px;
+    margin-left: 0; /* Assure l'alignement à gauche */
+}
+
+/* Style spécifique pour réduire le tableau E4 */
+.img-tableau {
+    max-width: 85%; /* Réduit la taille de l'image */
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(138, 43, 226, 0.3); /* Bordure discrète violette */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Ombre pour donner du relief */
+    transition: transform 0.3s ease;
+}
+
+/* Optionnel : petit effet au survol */
+.img-tableau:hover {
+    transform: scale(1.02);
+    border-color: var(--main-purple);
+}
+
+/* Sur mobile, on remet l'image à 100% pour la lisibilité */
+@media (max-width: 768px) {
+    .img-tableau {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* --- Frise Chronologique Veille --- */
+.veille-timeline-container {
+    position: relative;
+    padding: 30px 0 10px;
+}
+
+.veille-timeline-line {
+    position: absolute;
+    top: 38px; /* 30px padding + 8px (moitié d'un dot de 16px) */
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.5), rgba(168, 85, 247, 0.1));
+    z-index: 0;
+}
+
+.veille-timeline-dots {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.veille-dot-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.veille-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgba(168, 85, 247, 0.25);
+    border: 2px solid rgba(168, 85, 247, 0.5);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.veille-dot.active {
+    width: 20px;
+    height: 20px;
+    margin-top: -2px; /* compense la taille plus grande pour centrer sur la ligne */
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+    box-shadow: 0 0 12px var(--main-purple), 0 0 30px rgba(168, 85, 247, 0.6);
+    animation: veillePulse 2.5s ease-in-out infinite;
+}
+
+.veille-dot:hover {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+    box-shadow: 0 0 15px var(--main-purple);
+    transform: scale(1.3);
+}
+
+@keyframes veillePulse {
+    0%, 100% { box-shadow: 0 0 12px var(--main-purple), 0 0 30px rgba(168, 85, 247, 0.6); }
+    50% { box-shadow: 0 0 22px var(--main-purple), 0 0 45px rgba(168, 85, 247, 0.8); }
+}
+
+.veille-month {
+    color: rgba(176, 176, 176, 0.6);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.veille-month.active {
+    color: var(--text-white);
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+/* --- Bouton Résumés par mois --- */
+.btn-resume-mois {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 2px solid var(--main-purple);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-resume-mois:hover {
+    background-color: var(--main-purple);
+    color: white;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-resume-mois i {
+    margin-right: 8px;
+}
+
+/* --- Responsive Frise --- */
+@media (max-width: 576px) {
+    .veille-month {
+        font-size: 0.7rem;
+    }
+    .veille-dot {
+        width: 12px;
+        height: 12px;
+    }
+    .veille-dot.active {
+        width: 15px;
+        height: 15px;
+        margin-top: -1px;
+    }
+    .btn-resume-mois {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}

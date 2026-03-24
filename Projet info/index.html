@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Système solaire - Accueil</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold" href="index.html">Système Solaire</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalMercure">Mercure</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalVenus">Vénus</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalTerre">Terre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalMars">Mars</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalJupiter">Jupiter</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalSaturne">Saturne</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalUranus">Uranus</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalNeptune">Neptune</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="page2.html">Astronautes</a></li>
+          <li class="nav-item"><a class="nav-link" href="page3.html">Missions</a></li>
+          <li class="nav-item"><a class="nav-link" href="page4.html">Sciences</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-solar text-center text-light pt-7 pb-5">
+    <div class="container hero-content">
+      <h1 class="display-4 fw-bold text-glow mb-3">Explorez le système solaire</h1>
+      <p class="lead mb-5">
+        Explorez l’espace comme jamais auparavant — entre découvertes humaines, aventures interplanétaires et secrets
+        mathématiques du cosmos.
+      </p>
+
+      <section class="container mt-5 mb-5">
+        <div class="row g-4 justify-content-center" id="cards">
+
+          <div class="col-md-4">
+            <div class="card h-100 bg-card text-light">
+              <img src="images/Biographie/tl.webp" alt="Astronaute" class="card-img-top">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Voir les biographies d’astronautes</h5>
+                <p class="card-text flex-grow-1">
+                  Plongez dans le parcours de celles et ceux qui ont vécu l’aventure spatiale de l’intérieur.
+                </p>
+                <a href="page2.html" class="btn btn-outline-light mt-2">Accéder aux biographies</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 bg-card text-light">
+              <img src="images/image 2 index/iStock-1189556324-2.webp" alt="Mission" class="card-img-top">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Explorer les missions spatiales</h5>
+                <p class="card-text flex-grow-1">
+                  Des premiers pas sur la Lune aux sondes perdues dans l’infini, explorez les missions qui ont repoussé
+                  les limites du possible.
+                </p>
+                <a href="page3.html" class="btn btn-outline-light mt-2">Voir les missions</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 bg-card text-light">
+              <img src="images/image 3 index/Elon-Musk-le-nouveau-conquerant-de-l-espace.jpg" alt="Sciences"
+                class="card-img-top">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Comprendre les mathématiques de l’astronomie</h5>
+                <p class="card-text flex-grow-1">
+                  Plongez dans les lois qui expliquent pourquoi les planètes tournent, comment les fusées décollent et
+                  comment on mesure l’immensité de l’espace.
+                </p>
+                <a href="page4.html" class="btn btn-outline-light mt-2">Découvrir les notions</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <div class="modal fade" id="modalMercure" tabindex="-1" aria-labelledby="modalMercureLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalMercureLabel">Mercure</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png" alt="Mercure"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Mercure est la planète la plus proche du Soleil et l’une des plus petites du système solaire. Sa surface
+                est criblée de cratères et son atmosphère très fine ne la protège presque pas des radiations.
+              </p>
+              <p>
+                Les températures y sont extrêmes : brûlantes du côté éclairé, glaciales du côté plongé dans la nuit.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 4 880 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 58 millions de km</li>
+                <li><strong>Composition :</strong> Noyau métallique, croûte rocheuse</li>
+                <li><strong>Curiosité :</strong> Rotation lente mais orbite très rapide.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VÉNUS -->
+  <div class="modal fade" id="modalVenus" tabindex="-1" aria-labelledby="modalVenusLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalVenusLabel">Vénus</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png" alt="Vénus"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Vénus est souvent surnommée la “sœur de la Terre” car elles ont presque la même taille.
+                Mais la comparaison s’arrête là : son atmosphère étouffante de dioxyde de carbone crée
+                un effet de serre extrême qui en fait la planète la plus chaude du système solaire.
+              </p>
+              <p>
+                Sa surface est dissimulée sous des nuages d’acide sulfurique, et la pression au sol
+                est écrasante — plus de 90 fois celle de la Terre.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 12 100 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 108 millions de km</li>
+                <li><strong>Composition :</strong> Noyau métallique, manteau rocheux, surface volcanique</li>
+                <li><strong>Curiosité :</strong> Vénus tourne à l’envers par rapport aux autres planètes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERRE -->
+  <div class="modal fade" id="modalTerre" tabindex="-1" aria-labelledby="modalTerreLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalTerreLabel">Terre</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/17_earth.png" alt="Terre"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                La Terre est la seule planète connue où la vie existe. Elle possède de l’eau liquide,
+                une atmosphère protectrice et un champ magnétique qui la préserve des particules solaires.
+              </p>
+              <p>
+                Sa diversité de paysages, de climats et d’écosystèmes en fait un monde unique dans le système solaire.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 12 742 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 150 millions de km</li>
+                <li><strong>Composition :</strong> Noyau métallique, manteau rocheux, océans et continents</li>
+                <li><strong>Curiosité :</strong> Plus de 70 % de sa surface est recouverte d’eau.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARS -->
+  <div class="modal fade" id="modalMars" tabindex="-1" aria-labelledby="modalMarsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalMarsLabel">Mars</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/19_mars.png" alt="Mars"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Mars, la célèbre “planète rouge”, doit sa couleur à la poussière de fer oxydé qui recouvre son sol.
+                On y trouve des volcans géants, des canyons immenses et des calottes de glace.
+              </p>
+              <p>
+                Les rovers et sondes qui l’explorent cherchent à comprendre son passé et à déterminer
+                si la vie a pu y exister autrefois.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 6 780 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 228 millions de km</li>
+                <li><strong>Composition :</strong> Noyau métallique, manteau rocheux, surface poussiéreuse</li>
+                <li><strong>Curiosité :</strong> Olympus Mons est trois fois plus haut que l’Everest.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JUPITER -->
+  <div class="modal fade" id="modalJupiter" tabindex="-1" aria-labelledby="modalJupiterLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalJupiterLabel">Jupiter</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/16_jupiter_new.png" alt="Jupiter"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Jupiter est la plus grande planète du système solaire. Cette géante gazeuse, composée surtout
+                d’hydrogène et d’hélium, est célèbre pour sa Grande Tache Rouge, une immense tempête active
+                depuis des siècles.
+              </p>
+              <p>
+                Sa gravité colossale influence tout le système solaire, et elle abrite un grand nombre de lunes
+                parmi les plus étonnantes jamais observées.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 139 820 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 778 millions de km</li>
+                <li><strong>Composition :</strong> Hydrogène, hélium, noyau dense possible</li>
+                <li><strong>Curiosité :</strong> Sa masse dépasse celle de toutes les autres planètes réunies.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SATURNE -->
+  <div class="modal fade" id="modalSaturne" tabindex="-1" aria-labelledby="modalSaturneLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalSaturneLabel">Saturne</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/28_saturn.png" alt="Saturne"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Saturne est célèbre pour ses anneaux majestueux, composés de glace et de roche. Comme Jupiter,
+                c’est une géante gazeuse dominée par l’hydrogène et l’hélium.
+              </p>
+              <p>
+                Parmi ses nombreuses lunes, Titan se distingue par son atmosphère dense et ses lacs d’hydrocarbures,
+                ce qui en fait un monde particulièrement intrigant.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 116 460 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 1,43 milliard de km</li>
+                <li><strong>Composition :</strong> Hydrogène, hélium, noyau rocheux</li>
+                <li><strong>Curiosité :</strong> Ses anneaux sont très fins mais s’étendent sur des centaines de
+                  milliers de kilomètres.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- URANUS -->
+  <div class="modal fade" id="modalUranus" tabindex="-1" aria-labelledby="modalUranusLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalUranusLabel">Uranus</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png" alt="Uranus"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Uranus est une géante de glace reconnaissable à sa couleur bleu-vert, due au méthane présent
+                dans son atmosphère. Son axe de rotation est tellement incliné qu’elle semble rouler autour du Soleil.
+              </p>
+              <p>
+                Cette inclinaison extrême provoque des saisons très longues, pouvant durer plus de vingt ans.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 50 720 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 2,87 milliards de km</li>
+                <li><strong>Composition :</strong> Glaces (eau, ammoniac, méthane) et gaz</li>
+                <li><strong>Curiosité :</strong> Elle possède un système d’anneaux discrets mais bien réels.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEPTUNE -->
+  <div class="modal fade" id="modalNeptune" tabindex="-1" aria-labelledby="modalNeptuneLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-modal text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="modalNeptuneLabel">Neptune</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <img src="https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png" alt="Neptune"
+                class="img-fluid rounded shadow-sm">
+            </div>
+
+            <div class="col-md-8">
+              <p>
+                Neptune est la planète la plus éloignée du Soleil. C’est une géante de glace d’un bleu profond,
+                balayée par des vents parmi les plus rapides du système solaire.
+              </p>
+              <p>
+                Malgré son éloignement, elle reste essentielle pour comprendre la formation et l’évolution
+                des planètes géantes.
+              </p>
+              <ul>
+                <li><strong>Taille :</strong> ≈ 49 240 km</li>
+                <li><strong>Distance au Soleil :</strong> ≈ 4,5 milliards de km</li>
+                <li><strong>Composition :</strong> Glaces (eau, ammoniac, méthane) et gaz</li>
+                <li><strong>Curiosité :</strong> Ses vents peuvent dépasser 2 000 km/h.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center my-5">
+    <button class="btn btn-deep-scan" data-bs-toggle="collapse" data-bs-target="#sourcesSection">
+      Recherche approfondie
+    </button>
+  </div>
+
+  <div id="sourcesSection" class="collapse fade-section">
+    <div class="container text-light py-5">
+
+      <header class="text-center mb-5">
+        <h2 class="fw-bold text-glow">Explorer les sources officielles</h2>
+        <p class="lead text-light opacity-75">
+          Accédez directement aux agences qui façonnent l’avenir de l’exploration spatiale.
+        </p>
+      </header>
+
+      <div class="row g-4">
+
+        <!-- NASA -->
+        <div class="col-md-4">
+          <div class="card bg-card h-100 text-light text-center p-3">
+            <img src="images/Naza logo/OIP3.webp" alt="NASA" class="source-logo mb-3">
+            <h5 class="fw-bold">NASA</h5>
+            <p>Actualités, missions, images HD et données scientifiques.</p>
+            <a href="https://www.nasa.gov" target="_blank" class="btn btn-outline-light mt-2">Visiter le site</a>
+          </div>
+        </div>
+
+        <!-- ESA -->
+        <div class="col-md-4">
+          <div class="card bg-card h-100 text-light text-center p-3">
+            <img src="images/ESA logo/OIP.webp" alt="ESA" class="source-logo mb-3">
+            <h5 class="fw-bold">ESA</h5>
+            <p>L’agence spatiale européenne : astronautes, missions et découvertes.</p>
+            <a href="https://www.esa.int" target="_blank" class="btn btn-outline-light mt-2">Visiter le site</a>
+          </div>
+        </div>
+
+        <!-- ISRO -->
+        <div class="col-md-4">
+          <div class="card bg-card h-100 text-light text-center p-3">
+            <img src="images/Irso logo/logo-isro-agence-spatiale-indienne.png" alt="ISRO" class="source-logo mb-3">
+            <h5 class="fw-bold">ISRO</h5>
+            <p>Missions lunaires, avancées technologiques et exploration ambitieuse.</p>
+            <a href="https://www.isro.gov.in/" target="_blank" class="btn btn-outline-light mt-2">Visiter le site</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS BOOTSTRAP ===================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

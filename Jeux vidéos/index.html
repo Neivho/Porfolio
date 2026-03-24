@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏴‍☠️ Chasse au Trésor - Pirates des Caraïbes</title>
+    <meta name="description" content="Un jeu de chasse au trésor palpitant où vous devez éviter les pirates et collecter des trésors !">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Écran de menu principal -->
+    <div id="menu-screen" class="screen active">
+        <div class="stars-background"></div>
+        <div class="menu-content">
+            <h1 class="main-title">🏴‍☠️ CHASSE AU TRÉSOR 🏴‍☠️</h1>
+            <h2 class="subtitle">Pirates des Caraïbes</h2>
+            <p class="credit">Créé par Alexis Faria</p>
+            
+            <button id="start-btn" class="menu-button primary-button">
+                COMMENCER
+            </button>
+            
+            <div class="instructions">
+                <p>🎮 Utilise Z, Q, S, D pour te déplacer</p>
+                <p>💰 Collecte les trésors et évite les pirates! 🏴‍☠️</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Écran de sélection de difficulté -->
+    <div id="difficulty-screen" class="screen">
+        <div class="stars-background"></div>
+        <div class="difficulty-content">
+            <h1 class="difficulty-title">CHOISIS TA DIFFICULTÉ</h1>
+            
+            <div class="difficulty-options">
+                <div class="difficulty-option">
+                    <p class="difficulty-desc">2 pirates • Vitesse 2</p>
+                    <button class="difficulty-button easy" data-difficulty="easy">
+                        FACILE
+                    </button>
+                </div>
+                
+                <div class="difficulty-option">
+                    <p class="difficulty-desc">3 pirates • Vitesse 3</p>
+                    <button class="difficulty-button normal" data-difficulty="normal">
+                        NORMAL
+                    </button>
+                </div>
+                
+                <div class="difficulty-option">
+                    <p class="difficulty-desc">5 pirates • Vitesse 4</p>
+                    <button class="difficulty-button hard" data-difficulty="hard">
+                        DIFFICILE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Écran de jeu -->
+    <div id="game-screen" class="screen">
+        <div class="game-container">
+            <!-- HUD (Head-Up Display) -->
+            <div class="hud">
+                <div class="hud-item score-display">
+                    <span id="score-text">💰 Score: 0</span>
+                </div>
+                
+                <button id="pause-btn" class="pause-button">
+                    ⏸️ PAUSE
+                </button>
+                
+                <div class="hud-item difficulty-display">
+                    <span id="difficulty-text">⚔️ Facile</span>
+                </div>
+            </div>
+            
+            <!-- Canvas de jeu -->
+            <canvas id="game-canvas" width="800" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Menu Pause -->
+    <div id="pause-menu" class="overlay-menu">
+        <div class="overlay-background"></div>
+        <div class="pause-content">
+            <h1 class="pause-title">⏸️ PAUSE ⏸️</h1>
+            
+            <button id="resume-btn" class="menu-button continue-button">
+                ▶️ CONTINUER
+            </button>
+            
+            <button id="quit-btn" class="menu-button quit-button">
+                🏠 QUITTER
+            </button>
+            
+            <p class="pause-instruction">Appuie sur P ou Échap pour reprendre</p>
+        </div>
+    </div>
+
+    <!-- Menu Game Over -->
+    <div id="gameover-menu" class="overlay-menu">
+        <div class="overlay-background"></div>
+        <div class="gameover-content">
+            <h1 class="gameover-title">☠️ GAME OVER ☠️</h1>
+            <p class="final-score">💰 Score Final: <span id="final-score">0</span></p>
+            
+            <button id="menu-btn" class="menu-button return-button">
+                RETOUR À L'ACCUEIL
+            </button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

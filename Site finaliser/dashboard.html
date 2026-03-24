@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="pageTitle">Dashboard des Sujets de discussion - Lookiz</title>
+    <link rel="icon" href="images/Ary.webp">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@4.3.0/build/index.umd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/string-similarity/dist/string-similarity.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="top-navbar">
+        <button id="theme-toggle-btn" aria-label="Changer de thème" title="Changer de thème">🌙</button>
+        <a href="dashboard.html" style="margin-left: auto; margin-right: auto;">
+            <img src="images/Logo.svg" alt="Logo Lookiz" id="navbar-logo">
+        </a>
+        <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Ouvrir le menu">☰</button>
+    </nav>
+    <div class="toast-container" id="toast-container"></div>
+    <div class="page-wrapper">
+        <aside class="sidebar" id="sidebar" aria-labelledby="sidebar-title">
+            <div class="sidebar-header">
+                <h2 id="sidebar-title" data-translate-key="sidebarTitle">Menu Principal</h2>
+                <button class="sidebar-close-btn" id="sidebar-close" aria-label="Fermer le menu"></button>
+            </div>
+            <a href="#quick-stats-bar" class="sidebar-nav-link" id="goto-quick-stats-link"><span class="icon">📊</span><span class="text-label" data-translate-key="navQuickStats">Aperçu Rapide</span></a>
+            <a href="#stats-section" class="sidebar-nav-link" id="goto-stats-link"><span class="icon">📈</span><span class="text-label" data-translate-key="navStats">Statistiques Détaillées</span></a>
+            <a href="#charts-section" class="sidebar-nav-link" id="goto-charts-link"><span class="icon">🎨</span><span class="text-label" data-translate-key="navCharts">Graphiques</span></a>
+            <a href="#page-top" id="goto-top-link-sidebar"></a>
+            <div class="sidebar-scrollable-content">
+                <h3 data-translate-key="sidebarCategoriesTitle">Catégories</h3>
+                <ul id="sidebar-category-list">
+                    <li><a href="#sujets-grid" data-category="all" class="active"><span class="icon">🗂️</span><span class="text-label" data-translate-key="allCategories">Toutes les catégories</span></a></li>
+                </ul>
+            </div>
+        </aside>
+        <div class="content-pusher" id="content-pusher">
+            <div class="page-container" id="page-top">
+                <header>
+                    <h1 data-translate-key="mainHeading">Découvre les Sujets de discussion !</h1>
+                </header>
+                <main class="main-content">
+                    <div class="filters">
+                        <div class="filter-row" id="filter-row-1">
+                            <div class="filter-group" id="file-input-group">
+                                <label for="file-input" class="file-input-label" data-translate-key="chooseJsonFile">
+                                    <span class="icon" aria-hidden="true">📁</span> <span class="text-label">Choisir un fichier JSON</span>
+                                </label>
+                                <input type="file" id="file-input" accept=".json" style="display:none;">
+                            </div>
+                            <div class="filter-group" id="category-filter-group">
+                                <label for="category-filter" data-translate-key="filterByCategory">Filtrer par catégorie :</label>
+                                <select id="category-filter" aria-label="Filtrer par catégorie" data-translate-aria-label="filterByCategory">
+                                    <option value="all" data-translate-key="selectCategoryPromptForFilter">Aucune catégorie sélectionnée</option>
+                                    <option value="all_explicit" data-translate-key="allCategoriesFilter">Afficher Tous les Sujets de discussion</option>
+                                </select>
+                            </div>
+                             <div class="filter-group" id="language-filter-group">
+                                <label for="language-ui-dropdown-toggle" data-translate-key="filterByLanguage">Langue :</label>
+                                <div class="custom-ui-lang-dropdown" id="custom-ui-lang-dropdown-container">
+                                    <button type="button" class="language-ui-dropdown-toggle" id="language-ui-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                        <img id="language-ui-dropdown-current-flag" src="" alt="Drapeau langue UI sélectionnée" style="width: 20px; height: 15px; margin-right: 8px; vertical-align: middle; display: none;">
+                                        <span id="language-ui-dropdown-current-text">Français</span>
+                                        <span class="arrow-icon">▼</span>
+                                    </button>
+                                    <ul class="language-ui-dropdown-menu" id="language-ui-dropdown-menu-list" role="menu" style="display: none;"></ul>
+                                </div>
+                                <select id="language-filter" style="display: none;" aria-hidden="true">
+                                    <option value="fr">Français</option>
+                                    <option value="en">English</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="es">Español</option>
+                                    <option value="it">Italiano</option>
+                                    <option value="pt">Português (Brasil)</option>
+                                    <option value="pt-PT">Português (Portugal)</option>
+                                    <option value="ja">日本語 (Japanese)</option>
+                                    <option value="ko">한국어 (Korean)</option>
+                                    <option value="zh-CN">中文 (Chinois Simplifié)</option>
+                                    <option value="zh-TW">中文 (Chinois Traditionnel)</option>
+                                    <option value="nl">Nederlands (Dutch)</option>
+                                    <option value="ru">Русский (Russian)</option>
+                                    <option value="ar">العربية (Arabic)</option>
+                                    <option value="hi">हिन्दी (Hindi)</option>
+                                    <option value="sv">Svenska (Swedish)</option>
+                                    <option value="pl">Polski (Polish)</option>
+                                    <option value="tr">Türkçe (Turkish)</option>
+                                    <option value="el">Ελληνικά (Greek)</option>
+                                    <option value="cs">Čeština (Czech)</option>
+                                    <option value="hu">Magyar (Hungarian)</option>
+                                    <option value="fi">Suomi (Finnish)</option>
+                                    <option value="da">Dansk (Danish)</option>
+                                    <option value="no">Norsk (Norwegian)</option>
+                                    <option value="uk">Українська (Ukrainian)</option>
+                                    <option value="th">ไทย (Thai)</option>
+                                    <option value="vi">Tiếng Việt (Vietnamese)</option>
+                                    <option value="id">Bahasa Indonesia</option>
+                                    <option value="ms">Bahasa Melayu (Malay)</option>
+                                    <option value="ro">Română (Romanian)</option>
+                                    <option value="sk">Slovenčina (Slovak)</option>
+                                    <option value="bg">Български (Bulgarian)</option>
+                                    <option value="lt">Lietuvių (Lithuanian)</option>
+                                    <option value="lv">Latviešu (Latvian)</option>
+                                    <option value="et">Eesti (Estonian)</option>
+                                    <option value="sl">Slovenščina (Slovenian)</option>
+                                    <option value="hr">Hrvatski (Croatian)</option>
+                                    <option value="sr">Српски (Serbian)</option>
+                                    <option value="fa">فارسی (Persian)</option>
+                                    <option value="sw">Kiswahili (Swahili)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="age-filter-group-new">
+                            <div class="age-inputs-wrapper">
+                                <h3 data-translate-key="timeMachineTitle">Filtrer par Âge</h3>
+                                <div class="filter-group">
+                                    <label for="min-age-filter" data-translate-key="labelMinAge">Âge min :</label>
+                                    <input type="number" id="min-age-filter" min="3" max="12" data-translate-placeholder-key="placeholderMinAge" placeholder="Âge min">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="max-age-filter" data-translate-key="labelMaxAge">Âge max :</label>
+                                    <input type="number" id="max-age-filter" min="3" max="12" data-translate-placeholder-key="placeholderMaxAge" placeholder="Âge max">
+                                </div>
+                                <div class="filter-group any-age-checkbox-container">
+                                    <input type="checkbox" id="any-age-filter">
+                                    <label for="any-age-filter" data-translate-key="labelAnyAgeCheckbox">Tout âge</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="translation-controls">
+                            <label for="translate-dropdown-toggle" data-translate-key="translateToLabel">Traduire les sujets de discussion en :</label>
+                            <div class="custom-translate-dropdown" id="custom-translate-dropdown-container">
+                                <button type="button" class="translate-dropdown-toggle" id="translate-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                    <img id="translate-dropdown-current-flag" src="" alt="Drapeau langue sélectionnée" style="width: 20px; height: 15px; margin-right: 8px; vertical-align: middle; display: none;">
+                                    <span id="translate-dropdown-current-text" data-translate-key="customTranslateDropdownDefaultText">Traduire en...</span>
+                                    <span class="arrow-icon">▼</span>
+                                </button>
+                                <ul class="translate-dropdown-menu" id="translate-dropdown-menu-list" role="menu" style="display: none;"></ul>
+                            </div>
+                            <div id="translation-progress-container" style="display: none;">
+                                <span id="translation-progress-text-info">0 / 0</span>
+                                <span id="translation-time-estimate"></span>
+                                <div id="translation-progress-bar-wrapper">
+                                    <div id="translation-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-progress-text="0%"></div>
+                                </div>
+                                <button id="translation-progress-cancel-btn" title="Annuler la traduction">×</button>
+                            </div>
+                            <button id="translate-all-visible-btn" class="btn-global-action btn-translate-all" data-translate-key="translateCategoriesButton"><span class="icon" aria-hidden="true">🌐</span> <span class="text-label">Traduire par Catégories</span></button>
+                            <select id="translation-target-lang" style="display: none;">
+                                 <option value="fr">Français</option>
+                                 <option value="en">English</option>
+                                 <option value="de">Deutsch</option>
+                                 <option value="es">Español</option>
+                                 <option value="it">Italiano</option>
+                                 <option value="pt">Português (Brasil)</option>
+                                 <option value="pt-PT">Português (Portugal)</option>
+                                 <option value="ja">日本語 (Japanese)</option>
+                                 <option value="ko">한국어 (Korean)</option>
+                                 <option value="zh-CN">中文 (Chinois Simplifié)</option>
+                                 <option value="zh-TW">中文 (Chinois Traditionnel)</option>
+                                 <option value="nl">Nederlands (Dutch)</option>
+                                 <option value="ru">Русский (Russian)</option>
+                                 <option value="ar">العربية (Arabic)</option>
+                                 <option value="hi">हिन्दी (Hindi)</option>
+                                 <option value="sv">Svenska (Swedish)</option>
+                                 <option value="pl">Polski (Polish)</option>
+                                 <option value="tr">Türkçe (Turkish)</option>
+                                 <option value="el">Ελληνικά (Greek)</option>
+                                 <option value="cs">Čeština (Czech)</option>
+                                 <option value="hu">Magyar (Hungarian)</option>
+                                 <option value="fi">Suomi (Finnish)</option>
+                                 <option value="da">Dansk (Danish)</option>
+                                 <option value="no">Norsk (Norwegian)</option>
+                                 <option value="uk">Українська (Ukrainian)</option>
+                                 <option value="th">ไทย (Thai)</option>
+                                 <option value="vi">Tiếng Việt (Vietnamese)</option>
+                                 <option value="id">Bahasa Indonesia</option>
+                                 <option value="ms">Bahasa Melayu (Malay)</option>
+                                 <option value="ro">Română (Romanian)</option>
+                                 <option value="sk">Slovenčina (Slovak)</option>
+                                 <option value="bg">Български (Bulgarian)</option>
+                                 <option value="lt">Lietuvių (Lithuanian)</option>
+                                 <option value="lv">Latviešu (Latvian)</option>
+                                 <option value="et">Eesti (Estonian)</option>
+                                 <option value="sl">Slovenščina (Slovenian)</option>
+                                 <option value="hr">Hrvatski (Croatian)</option>
+                                 <option value="sr">Српски (Serbian)</option>
+                                 <option value="fa">فارسی (Persian)</option>
+                                 <option value="sw">Kiswahili (Swahili)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="quick-stats-bar" id="quick-stats-bar" role="region" aria-labelledby="quick-stats-title">
+                        <h2 id="quick-stats-title" class="sr-only" data-translate-key="navQuickStats">Aperçu Rapide</h2>
+                        <div><span id="quick-stats-total-sujets">3252</span><span data-translate-key="quickStatsTotalSujets">Sujets</span></div>
+                        <div><span id="quick-stats-total-categories">27</span><span data-translate-key="quickStatsTotalCategories">Catégories</span></div>
+                    </div>
+                    <div class="search-and-add-sujet-container">
+                        <div class="sujet-search-container">
+                            <label for="search-sujet-input" data-translate-key="searchSujetLabel">Rechercher un sujet :</label>
+                            <input type="search" id="search-sujet-input" data-translate-placeholder-key="searchSujetPlaceholder" placeholder="Nom du sujet de discussion...">
+                            <button id="search-sujet-action-btn" class="btn-global-action btn-search-action"><span class="icon" aria-hidden="true">🔍</span><span class="text-label" data-translate-key="searchButton">Rechercher</span></button>
+                        </div>
+                    </div>
+                    <section class="manage-categories-section" aria-labelledby="manage-categories-heading">
+                        <h3 id="manage-categories-heading" data-translate-key="manageCategoriesTitle">Gérer les Catégories</h3>
+                        <div class="add-category-form">
+                            <label for="new-category-name-input" class="sr-only" data-translate-key="categoryNamePlaceholder">Nom de la nouvelle catégorie...</label>
+                            <div class="input-with-clear-wrapper">
+                                <input type="text" id="new-category-name-input" data-translate-placeholder-key="categoryNamePlaceholder" placeholder="Nom de la nouvelle catégorie...">
+                                <button type="button" class="input-clear-btn" aria-label="Effacer le texte"></button>
+                            </div>
+                            <button id="add-category-btn-global" class="btn-global-action btn-add-category" data-translate-key="addCategoryButton"><span class="icon" aria-hidden="true">➕</span> <span class="text-label">Ajouter Catégorie</span></button>
+                            <button id="add-sujet-btn" class="btn-global-action" data-translate-key="addSujetButton"><span class="icon" aria-hidden="true">➕</span> <span class="text-label">Ajouter un Sujet</span></button>
+                        </div>
+                        <div id="current-categories-list" role="list" aria-live="polite"></div>
+                    </section>
+                    <section class="category-selection-section" id="category-selection-section" aria-labelledby="category-selection-heading">
+                        <h2 id="category-selection-heading" data-translate-key="categorySelectionTitle">Explorer par Catégorie</h2>
+                        <div id="category-selection-grid" class="category-selection-grid" role="listbox" aria-orientation="horizontal"></div>
+                    </section>
+                    
+                    <div id="tier-filters-container" class="tier-filters-container visible">
+                        <button class="tier-filter-btn active" data-tier="all" title="Tous les Tiers" data-translate-key="tierAll">Tous</button>
+                        <button class="tier-filter-btn" data-tier="0" title="Gratuit"></button>
+                        <button class="tier-filter-btn" data-tier="1" title="Argent"></button>
+                        <button class="tier-filter-btn" data-tier="2" title="Or"></button>
+                        <button id="open-bulk-transfer-modal-btn" class="btn-global-action btn-bulk-transfer">
+                            <span class="icon" aria-hidden="true">🚀</span>
+                            <span class="text-label" data-translate-key="bulkTransferButton">Transférer</span>
+                        </button>
+                    </div>
+                    
+                    <div id="sujets-grid" class="sujets-container" aria-live="polite"></div>
+                    
+                    <section class="stats-section" id="stats-section" aria-labelledby="stats-section-heading">
+                        <h2 id="stats-section-heading" data-translate-key="statsTitle">Statistiques Détaillées par Catégorie</h2>
+                        <div id="category-stats-container" class="category-stats-container"></div>
+                    </section>
+                    <div class="global-actions-container">
+                        <button id="download-all-btn" class="btn-global-action" data-translate-key="saveWithOptionsButton"><span class="icon" aria-hidden="true">💾</span> <span class="text-label">Sauvegarder (Options)</span></button>
+                        <button id="run-audit-btn" class="btn-global-action btn-esport">
+                            <span class="icon" aria-hidden="true">🔍</span>
+                            <span class="text-label" data-translate-key="runAuditBtn">Lancer un audit</span>
+                        </button>
+                        <button id="open-lang-hub-btn" class="btn-global-action">
+                            <span class="icon" aria-hidden="true">🌐</span>
+                            <span class="text-label" data-translate-key="langHubTitle">Hub des Langues</span>
+                        </button>
+                        <button id="open-recommendations-btn" class="btn-global-action btn-recommendation">
+                            <span class="icon" aria-hidden="true">⭐</span>
+                            <span class="text-label" data-translate-key="recommendationButton">Recommandations</span>
+                        </button>
+                        <button id="open-suggestions-btn" class="btn-global-action btn-suggestion">
+                            <span class="icon" aria-hidden="true">💡</span>
+                            <span class="text-label" data-translate-key="suggestionButton">Suggestions</span>
+                        </button>
+                        <p id="save-reminder" data-translate-key="saveReminderText">N'oubliez pas de télécharger pour sauvegarder vos modifications !</p>
+                    </div>
+                    <section class="charts-section" id="charts-section" aria-labelledby="charts-section-heading">
+                        <h2 id="charts-section-heading" data-translate-key="chartsTitle">Visualisations Globales</h2>
+                        <div class="chart-container-wrapper">
+                            <div class="chart-block" id="category-chart-container">
+                                <h3 data-translate-key="discoveriesByCategoryChartTitle">Sujets de discussion par Catégorie</h3>
+                                <div class="canvas-container"></div>
+                            </div>
+                            <div class="chart-block" id="age-chart-container">
+                                <h3 data-translate-key="distributionByAgeChartTitle">Distribution par Âge</h3>
+                                <div class="canvas-container"></div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+        <button id="back-to-top-btn" title="Retour en haut" aria-label="Retour en haut de la page" style="display: none;">↑</button>
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <!-- MODAUX -->
+    <div id="translate-categories-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="translate-categories-modal-close">×</span>
+            <h3 data-translate-key="translateCategoriesModalTitle">Sélectionner les catégories à traduire</h3>
+            <div id="translate-categories-modal-list" class="category-checkbox-list"></div>
+            <div class="modal-actions">
+                <button id="translate-categories-select-all-btn" class="btn-modal-action" data-translate-key="selectAllCategoriesBtn">Tout Sélectionner</button>
+                <button id="translate-categories-confirm-btn" class="btn-modal-action btn-primary" data-translate-key="translateSelectionBtn">Traduire la Sélection</button>
+            </div>
+        </div>
+    </div>
+    <div id="save-options-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="save-options-modal-close">×</span>
+            <h3 data-translate-key="saveOptionsModalTitle">Options de Sauvegarde</h3>
+            <div class="save-options-form" style="padding: 10px 0;">
+                <div style="margin-bottom: 10px;">
+                    <input type="radio" id="save-all-data" name="save-option" value="all" checked style="margin-right: 5px;">
+                    <label for="save-all-data" data-translate-key="saveOptionAll" style="cursor:pointer;">Tout sauvegarder</label>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <input type="radio" id="save-by-language" name="save-option" value="language" style="margin-right: 5px;">
+                    <label for="save-by-language" data-translate-key="saveOptionByLanguage" style="cursor:pointer;">Sauvegarder par langue</label>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <input type="radio" id="save-specific-category" name="save-option" value="category" style="margin-right: 5px;">
+                    <label for="save-specific-category" data-translate-key="saveOptionSpecificCategory" style="cursor:pointer;">Sauvegarder une catégorie spécifique</label>
+                </div>
+                <div id="save-category-selector-container" style="display: none; margin-top: 15px; padding-top:10px; border-top: 1px solid var(--filter-border);">
+                    <label for="save-category-select" data-translate-key="selectCategoryToSave" style="display:block; margin-bottom: 5px;">Choisir une catégorie :</label>
+                    <select id="save-category-select" style="width: 100%;"></select>
+                </div>
+                <div id="save-language-selector-container" style="display: none; margin-top: 15px; padding-top:10px; border-top: 1px solid var(--filter-border);">
+                    <label for="save-language-dropdown-toggle" data-translate-key="selectLanguageToSave" style="display:block; margin-bottom: 5px;">Choisir une langue :</label>
+                    <div class="custom-ui-lang-dropdown" id="custom-save-lang-dropdown-container">
+                        <button type="button" class="language-ui-dropdown-toggle" id="save-language-dropdown-toggle" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+                            <img id="save-language-dropdown-current-flag" src="" alt="Drapeau langue sélectionnée" style="width: 20px; height: 15px; margin-right: 8px; vertical-align: middle; display: none;">
+                            <span id="save-language-dropdown-current-text">Choisir une langue...</span>
+                            <span class="arrow-icon">▼</span>
+                        </button>
+                        <ul class="language-ui-dropdown-menu" id="save-language-dropdown-menu-list" role="menu" style="display: none;"></ul>
+                    </div>
+                    <select id="save-language-select" style="display: none;" aria-hidden="true"></select>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="save-options-confirm-btn" class="btn-modal-action btn-primary" data-translate-key="confirmSaveBtn">Confirmer la Sauvegarde</button>
+            </div>
+        </div>
+    </div>
+    <div id="lang-hub-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-esport">
+            <button class="modal-close-btn" id="lang-hub-modal-close" aria-label="Fermer"></button>
+            <header class="lang-hub-header">
+                <nav class="lang-hub-nav">
+                    <button class="hub-nav-btn active" data-target-panel="#versus-view-panel">
+                        <span class="icon">🆚</span>
+                        <span data-translate-key="hubTabVersus">Versus</span>
+                    </button>
+                    <button class="hub-nav-btn" data-target-panel="#global-stats-view-panel">
+                        <span class="icon">🌍</span>
+                        <span data-translate-key="hubTabGlobal">Global</span>
+                    </button>
+                    <button class="hub-nav-btn" data-target-panel="#advanced-stats-view-panel">
+                        <span class="icon">📈</span>
+                        <span data-translate-key="hubTabAdvanced">Avancé</span>
+                    </button>
+                </nav>
+            </header>
+            <main class="lang-hub-content">
+                <section id="versus-view-panel" class="hub-content-panel active">
+                    <div class="versus-main-content-area">
+                        <div id="versus-controls-container" class="versus-controls-wrapper">
+                        </div>
+                        <div id="versus-results-container" class="versus-stats-grid">
+                            <div class="versus-placeholder" data-translate-key="langStatsDefaultMessage">
+                                Sélectionnez deux langues pour lancer la comparaison.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="global-stats-view-panel" class="hub-content-panel">
+                    <h2 class="esport-title" data-translate-key="langStatsGlobalTitle">Vue d'Ensemble Globale</h2>
+                    <div class="global-main-content-area">
+                        <div id="global-stats-kpi-grid" class="global-stats-kpi-grid"></div>
+                        <div class="global-view-main-content">
+                            <div id="world-map-container" class="hub-map-container"></div>
+                            <div id="global-stats-chart-container" class="global-stats-chart-container">
+                                <h3 data-translate-key="top5LanguagesTitle">Top 5 Langues</h3>
+                                <div class="canvas-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="advanced-stats-view-panel" class="hub-content-panel">
+                    <h2 class="esport-title" data-translate-key="langStatsAdvancedTitle">Statistiques Avancées</h2>
+                    <div class="advanced-main-content-area">
+                        <div class="advanced-stats-filters">
+                            <div class="filter-group" id="adv-stats-lang-filter-group">
+                                <label for="adv-stats-lang-toggle" data-translate-key="filterByLanguage">Langue :</label>
+                                <div class="custom-versus-dropdown">
+                                    <div class="lang-selector-input-group">
+                                        <button type="button" id="adv-stats-lang-toggle" class="esport-select custom-select-toggle" aria-haspopup="true" aria-expanded="false">
+                                            <img src="" class="flag-icon" style="display: none;">
+                                            <span class="text-label"></span>
+                                            <span class="arrow-icon">▼</span>
+                                        </button>
+                                        <ul id="adv-stats-lang-menu" class="custom-select-menu" style="display: none;"></ul>
+                                    </div>
+                                </div>
+                                <select id="adv-stats-lang-filter" class="esport-select" style="display: none;"></select>
+                            </div>
+                            <div class="filter-group">
+                                 <label for="adv-stats-sort-filter" data-translate-key="sortBy">Trier par :</label>
+                                 <select id="adv-stats-sort-filter" class="esport-select">
+                                    <option value="name-asc" data-translate-key="sortNameAsc" selected>Nom (A-Z)</option>
+                                    <option value="name-desc" data-translate-key="sortNameDesc">Nom (Z-A)</option>
+                                    <option value="total-desc" data-translate-key="sortTotalDesc">Total (décroissant)</option>
+                                    <option value="total-asc" data-translate-key="sortTotalAsc">Total (croissant)</option>
+                                    <option value="age-desc" data-translate-key="sortAgeDesc">Avec Âge (%)</option>
+                                 </select>
+                            </div>
+                        </div>
+                        <div id="advanced-stats-table-container" class="advanced-stats-table-container">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div id="audit-report-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-esport" style="max-width: 95vw; max-height: 95vh; width: 1200px; height: 90vh;">
+            <header class="lang-hub-header" style="position: relative;">
+                 <h2 id="audit-modal-title" class="esport-title" data-translate-key="auditModalTitle" style="margin: 0; padding-bottom: 1rem;">Rapport d'Audit</h2>
+                 <button class="modal-close-btn" id="audit-modal-close" aria-label="Fermer"></button>
+            </header>
+            <main id="audit-report-content">
+            </main>
+        </div>
+    </div>
+    <div id="age-details-chart-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-age-chart">
+            <button class="btn-close-stylish" id="age-details-modal-close" aria-label="Fermer"></button>
+            <h3 id="age-details-modal-title"></h3>
+            <div id="age-chart-modal-container">
+                <canvas id="age-details-chart-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+    <div id="suggestions-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-esport" style="max-width: 900px; max-height: 85vh; gap: 1rem;">
+            <button class="modal-close-btn" id="suggestions-modal-close" aria-label="Fermer"></button>
+            <h3 id="suggestions-modal-title" class="esport-title" data-translate-key="suggestionModalTitle" style="margin: 0;"></h3>
+            <div id="suggestions-list-container">
+            </div>
+        </div>
+    </div>
+     <div id="recommendations-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-esport" style="max-width: 1100px; max-height: 90vh; width: 95vw;">
+            <button class="modal-close-btn" id="recommendations-modal-close" aria-label="Fermer"></button>
+            <h3 id="recommendations-modal-title" class="esport-title" data-translate-key="recommendationsModalTitle"></h3>
+            <h4 id="recommendations-count-display" class="recommendations-count"></h4> 
+            <div class="recommendations-content-wrapper">
+                <aside id="recommendations-nav-sidebar" class="recommendations-sidebar">
+                </aside>
+                <main id="recommendations-list-container" class="recommendations-main-content">
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAUX DE TRANSFERT DE TIERS -->
+    <div id="bulk-transfer-modal" class="modal modal-esport" style="display: none;">
+        <div class="modal-content modal-content-esport" style="max-width: 700px; max-height: 85vh;">
+            <button class="modal-close-btn" id="bulk-transfer-modal-close" aria-label="Fermer"></button>
+            <h3 id="bulk-transfer-modal-title" class="esport-title" data-translate-key="bulkTransferModalTitle">Transférer des Sujets </h3>
+            <div id="bulk-transfer-subject-list" class="category-checkbox-list" style="max-height: 40vh; overflow-y: auto; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); margin-bottom: 1.5rem;">
+            </div>
+            <div class="bulk-transfer-tier-selection" style="text-align: center; margin-bottom: 1.5rem;">
+                <h4 data-translate-key="selectDestinationTier" style="color: var(--logo-yellow); margin-bottom: 1rem;">Choisir le nouveau Tier :</h4>
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                    <input type="radio" id="bulk-tier-0" name="bulk-transfer-tier" value="0" checked hidden>
+                    <label for="bulk-tier-0" class="tier-filter-btn btn-tier-choice" data-tier="0" title="Gratuit"></label>
+                    <input type="radio" id="bulk-tier-1" name="bulk-transfer-tier" value="1" hidden>
+                    <label for="bulk-tier-1" class="tier-filter-btn btn-tier-choice" data-tier="1" title="Argent"></label>
+                    <input type="radio" id="bulk-tier-2" name="bulk-transfer-tier" value="2" hidden>
+                    <label for="bulk-tier-2" class="tier-filter-btn btn-tier-choice" data-tier="2" title="Or"></label>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="bulk-transfer-select-all-btn" class="btn-modal-action" data-translate-key="selectAllBtn">Tout Sélectionner</button>
+                <button id="bulk-transfer-confirm-btn" class="btn-modal-action btn-primary" data-translate-key="transferSelectionBtn">Transférer la Sélection</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="transfer-tier-modal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="modal-close-btn" id="transfer-tier-modal-close">×</span>
+            <h3 id="transfer-tier-modal-title" style="margin-bottom: 2rem;">Transférer le sujet</h3>
+            <div id="transfer-flow-container">
+                <div id="current-tier-display">
+                    <span class="flow-label" data-translate-key="currentTierLabel">Tier Actuel</span>
+                </div>
+                <div id="transfer-arrow">➔</div>
+                <div id="destination-tier-choices">
+                    <span class="flow-label" data-translate-key="destinationTierLabel">Nouveau Tier</span>
+                    <div class="choices-wrapper">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAUX D'ÉDITION EN MASSE -->
+    <div id="bulk-edit-category-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="bulk-edit-category-modal-close">×</span>
+            <h3 data-translate-key="bulkEditCategoryTitle">Changer la Catégorie</h3>
+            <p id="bulk-edit-category-modal-info" style="text-align: center; margin-bottom: 15px;"></p>
+            <select id="bulk-edit-category-select" style="width: 100%; padding: 10px; font-size: 1rem;"></select>
+            <div class="modal-actions">
+                <button id="bulk-edit-category-confirm-btn" class="btn-modal-action btn-primary" data-translate-key="confirmButton">Confirmer</button>
+            </div>
+        </div>
+    </div>
+    <div id="bulk-edit-age-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="modal-close-btn" id="bulk-edit-age-modal-close">×</span>
+            <h3 data-translate-key="bulkEditAgeTitle">Changer la Tranche d'Âge</h3>
+            <p id="bulk-edit-age-modal-info" style="text-align: center; margin-bottom: 15px;"></p>
+            <div class="age-inputs-wrapper">
+                <div class="filter-group">
+                    <label for="bulk-min-age-filter" data-translate-key="labelMinAge">Âge minimum :</label>
+                    <input type="number" id="bulk-min-age-filter" min="3" max="12" data-translate-placeholder-key="placeholderMinAge" placeholder="Ex: 5">
+                </div>
+                <div class="filter-group">
+                    <label for="bulk-max-age-filter" data-translate-key="labelMaxAge">Âge maximum :</label>
+                    <input type="number" id="bulk-max-age-filter" min="3" max="12" data-translate-placeholder-key="placeholderMaxAge" placeholder="Ex: 8">
+                </div>
+                <div class="filter-group any-age-checkbox-container">
+                    <input type="checkbox" id="bulk-any-age-filter">
+                    <label for="bulk-any-age-filter" data-translate-key="labelAnyAgeCheckbox">Tout âge</label>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="bulk-edit-age-confirm-btn" class="btn-modal-action btn-primary" data-translate-key="confirmButton">Confirmer</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BARRE D'ACTIONS EN MASSE -->
+    <div id="bulk-actions-bar">
+        <div id="bulk-actions-info">
+            <strong>0</strong> <span data-translate-key="sujetsSelected">sujets sélectionnés</span>
+        </div>
+        <div id="bulk-actions-controls">
+            <button class="btn-bulk-action" id="bulk-select-all-btn" data-translate-key="bulkSelectAll">Tout Sélectionner</button>
+            <button class="btn-bulk-action category" id="bulk-action-change-category">
+                <span class="icon">🏷️</span> <span data-translate-key="bulkActionChangeCategory">Catégorie</span>
+            </button>
+            <button class="btn-bulk-action age" id="bulk-action-change-age">
+                <span class="icon">🎯</span> <span data-translate-key="bulkActionChangeAge">Âge</span>
+            </button>
+            <button class="btn-bulk-action delete" id="bulk-action-delete">
+                <span class="icon">🗑️</span> <span data-translate-key="bulkActionDelete">Supprimer</span>
+            </button>
+            <button class="btn-bulk-action" id="bulk-deselect-all-btn" data-translate-key="bulkDeselectAll">Tout Désélectionner</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
