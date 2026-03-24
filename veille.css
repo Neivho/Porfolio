@@ -61,3 +61,26 @@
     display: block;
     background-color: #1a1a2e;
 }
+
+/* Résumé mensuel */
+.month-summary {
+    background: linear-gradient(135deg, rgba(43, 0, 77, 0.4), rgba(168, 85, 247, 0.1));
+    border: 1px dashed rgba(168, 85, 247, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.month-summary h5 {
+    color: var(--main-purple);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.month-summary p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
