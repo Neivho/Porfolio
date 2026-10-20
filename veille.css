@@ -1,32 +1,70 @@
-/* --- Veille Page Styles --- */
+/* ==========================================================================
+   VEILLE TECHNOLOGIQUE — ALEXIS FARIA
+   Harmonisation avec le Thème Beige & Bleu Royal
+   ========================================================================== */
 
-/* Hero */
+/* En-tête de la Page Veille */
 .veille-hero {
-    min-height: 35vh;
-    background: radial-gradient(circle at 50% 80%, #2b004d 0%, transparent 60%);
-    padding-top: 40px;
+    min-height: 32vh;
+    background: 
+        radial-gradient(ellipse at 50% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+        var(--bg-body);
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Sections mensuelles */
+.veille-footer {
+    border-top: 2px solid #3f3f46;
+}
+
+.veille-hero h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--text-heading);
+}
+
+.veille-hero h1 span {
+    color: var(--accent);
+}
+
+.veille-hero .lead {
+    color: var(--gold-light) !important;
+}
+
+/* Sections Mensuelles */
 .month-section {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .month-header {
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .month-header h3 {
-    color: var(--text-white);
-    font-weight: 600;
-    font-size: 1.3rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .month-header h3 i {
-    color: var(--main-purple);
-    margin-right: 10px;
+    color: var(--accent);
+}
+
+.month-section .text-gray {
+    color: #ffffff !important;
+}
+
+.month-section .badge-tool {
+    color: var(--gold);
 }
 
 /* Rendre les dots cliquables sur la page veille */
@@ -35,52 +73,81 @@
 }
 
 .veille-dot-group:hover .veille-month {
-    color: var(--text-white);
+    color: var(--accent);
 }
 
 /* Tag de source d'article */
 .veille-source-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--main-purple);
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    border-radius: 20px;
-    padding: 3px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    background: var(--gold-subtle);
+    border: 1px solid var(--border-gold);
+    border-radius: 9999px;
+    padding: 4px 12px;
     letter-spacing: 0.3px;
+}
+
+.veille-article-title {
+    color: var(--text-heading);
+}
+
+.month-section .btn-purple-visit {
+    color: var(--gold-light);
+}
+
+.month-section .btn-purple-visit:hover {
+    color: #0a0a0c;
 }
 
 /* Images uniformes pour tous les articles de veille */
 .veille-article-img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 190px;
+    object-fit: contain;
     object-position: center;
-    border-radius: 12px;
+    border-radius: 14px;
     display: block;
-    background-color: #1a1a2e;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.veille-article-img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
 }
 
 /* Résumé mensuel */
 .month-summary {
-    background: linear-gradient(135deg, rgba(43, 0, 77, 0.4), rgba(168, 85, 247, 0.1));
-    border: 1px dashed rgba(168, 85, 247, 0.4);
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 25px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 30px;
+    box-shadow: var(--shadow-sm);
 }
 
 .month-summary h5 {
-    color: var(--main-purple);
-    font-size: 1.1rem;
-    font-weight: 600;
+    color: #111111;
+    font-size: 1.15rem;
+    font-weight: 700;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .month-summary p {
-    color: var(--text-gray);
+    color: #111111;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 0;
 }

@@ -7,29 +7,64 @@
     <title>Veille Technologique | Alexis FARIA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="veille.css">
 </head>
 
 <body>
 
+    <div id="scrollProgress"></div>
+
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar" id="mainNav">
         <div class="container-fluid px-lg-5">
-            <a class="navbar-brand fw-bold" href="index.html">PORTFOLIO<span>.</span></a>
+            <a class="navbar-brand" href="index.html">ALEXIS <span>FARIA</span><span class="brand-badge d-none d-sm-inline-block">L3 PRO DAWI · PARIS-SACLAY</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="fas fa-home text-accent"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about"><i class="fas fa-user text-accent"></i> À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects"><i class="fas fa-laptop-code text-accent"></i> Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a></li>
+                    
+                    <!-- Menu Déroulant BTS SIO (SLAM) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarBtsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-graduation-cap text-accent"></i> BTS SIO (SLAM)
+                        </a>
+                        <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarBtsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="index.html#diplomes-certifications">
+                                    <i class="fas fa-certificate text-accent"></i> Diplômes & Certifications
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item active" href="veille.html">
+                                    <i class="fas fa-satellite-dish text-accent"></i> Veille Technologique
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="e4.html">
+                                    <i class="fas fa-award text-accent"></i> Épreuve E4
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-contact-purple text-center" href="https://padlet.com" target="_blank"
-                            id="padlet-link">
-                            <i class="fas fa-th-large"></i> Mon Padlet
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-outline-custom btn-sm py-2 px-3" href="https://padlet.com" target="_blank" id="padlet-link">
+                            <i class="fas fa-th-large text-accent me-1"></i> Padlet
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-contact-purple text-center" href="contact.html">
+                            <i class="fas fa-paper-plane me-1"></i> Contact
                         </a>
                     </li>
                 </ul>
@@ -40,8 +75,8 @@
     <!-- En-tête -->
     <header class="veille-hero d-flex align-items-center">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold">Veille <span>Technologique</span></h1>
-            <p class="lead text-gray mt-3">L'IA dans le diagnostic médical — Résumés mensuels</p>
+            <h1 class="display-4 fw-bold reveal-on-scroll">Veille <span>Technologique</span></h1>
+            <p class="lead text-gray mt-3 reveal-on-scroll stagger-1">L'IA dans le diagnostic médical — Résumés mensuels</p>
         </div>
     </header>
 
@@ -83,19 +118,19 @@
 
             <!-- ══════════════ DÉCEMBRE 2025 ══════════════ -->
             <div class="month-section" id="dec">
-                <div class="month-header">
+                <div class="month-header reveal-on-scroll">
                     <h3><i class="fas fa-calendar"></i> Décembre 2025</h3>
                 </div>
 
                 <!-- Article 1 -->
-                <div class="card project-card p-4 mb-3">
+                <div class="card project-card p-4 mb-3 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article1.jpg" class="veille-article-img shadow-lg" alt="FDA AI Devices">
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">📰 Radiology Business — Déc. 2025</span>
-                            <h4 class="text-white mb-2 mt-2">295 dispositifs IA approuvés par la FDA en 2025</h4>
+                            <h4 class="veille-article-title mb-2 mt-2">295 dispositifs IA approuvés par la FDA en 2025</h4>
                             <p class="text-gray">La FDA a publié sa mise à jour de décembre 2025 : <strong>295
                                     dispositifs médicaux IA</strong> ont obtenu une autorisation sur l'année, dont 56
                                 nouveaux en radiologie ajoutés en décembre. Le total dépasse désormais <strong>1 300
@@ -117,7 +152,7 @@
                 </div>
 
                 <!-- Article 2 -->
-                <div class="card project-card p-4">
+                <div class="card project-card p-4 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article2.webp" class="veille-article-img shadow-lg"
@@ -125,7 +160,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">📰 GE HealthCare — Déc. 2025</span>
-                            <h4 class="text-white mb-2 mt-2">GE HealthCare : 120 autorisations FDA et Pristina Recon DL
+                            <h4 class="veille-article-title mb-2 mt-2">GE HealthCare : 120 autorisations FDA et Pristina Recon DL
                             </h4>
                             <p class="text-gray">GE HealthCare atteint <strong>120 autorisations FDA</strong> pour ses
                                 dispositifs IA, se positionnant comme le leader mondial en nombre de clearances. Sur ses
@@ -148,7 +183,7 @@
                 </div>
 
                 <!-- Résumé du mois -->
-                <div class="month-summary">
+                <div class="month-summary reveal-on-scroll">
                     <h5><i class="fas fa-microscope"></i> Synthèse de Décembre</h5>
                     <p>Ce mois met en avant une accélération majeure de la validation réglementaire des IA médicales,
                         avec un nombre record d'autorisations FDA, particulièrement en radiologie. Le leader GE
@@ -159,12 +194,12 @@
 
             <!-- ══════════════ JANVIER 2026 ══════════════ -->
             <div class="month-section" id="jan">
-                <div class="month-header">
+                <div class="month-header reveal-on-scroll">
                     <h3><i class="fas fa-calendar"></i> Janvier 2026</h3>
                 </div>
 
                 <!-- Article 1 -->
-                <div class="card project-card p-4 mb-3">
+                <div class="card project-card p-4 mb-3 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article3.webp" class="veille-article-img shadow-lg"
@@ -172,7 +207,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">🏛️ OMS (WHO) — 7 Janv. 2026</span>
-                            <h4 class="text-white mb-2 mt-2">Rapport OMS : L'IA en santé en Europe, un cadre juridique
+                            <h4 class="veille-article-title mb-2 mt-2">Rapport OMS : L'IA en santé en Europe, un cadre juridique
                                 urgent</h4>
                             <p class="text-gray">L'Organisation Mondiale de la Santé publie son rapport <em>"AI in
                                     Health: State of Readiness across the WHO European Region"</em> le 7 janvier 2026.
@@ -196,7 +231,7 @@
                 </div>
 
                 <!-- Article 2 -->
-                <div class="card project-card p-4">
+                <div class="card project-card p-4 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article4.webp" class="veille-article-img shadow-lg"
@@ -204,7 +239,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">📰 Diagnostic Imaging — Janv. 2026</span>
-                            <h4 class="text-white mb-2 mt-2">L'IA dans le Point d'Inflexion de la Radiologie 2026</h4>
+                            <h4 class="veille-article-title mb-2 mt-2">L'IA dans le Point d'Inflexion de la Radiologie 2026</h4>
                             <p class="text-gray">Un article de référence de <em>Diagnostic Imaging</em> de janvier 2026
                                 prédit que les plateformes IA réussies seront celles intégrant le <strong>contexte
                                     clinique</strong>, l'adaptabilité et une intégration fluide dans les workflows
@@ -226,7 +261,7 @@
                 </div>
 
                 <!-- Résumé du mois -->
-                <div class="month-summary">
+                <div class="month-summary reveal-on-scroll">
                     <h5><i class="fas fa-balance-scale"></i> Synthèse de Janvier</h5>
                     <p>L'attention se porte sur la régulation internationale et l'intégration clinique. Alors que
                         l'utilisation de l'IA pour le diagnostic s'étend à 32 pays en Europe, l'OMS alerte sur un manque
@@ -238,12 +273,12 @@
 
             <!-- ══════════════ FÉVRIER 2026 ══════════════ -->
             <div class="month-section" id="fev">
-                <div class="month-header">
+                <div class="month-header reveal-on-scroll">
                     <h3><i class="fas fa-calendar"></i> Février 2026</h3>
                 </div>
 
                 <!-- Article 1 -->
-                <div class="card project-card p-4 mb-3">
+                <div class="card project-card p-4 mb-3 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article5.webp" class="veille-article-img shadow-lg"
@@ -251,7 +286,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">🔬 Intelligent Medicine / EurekaAlert — Févr. 2026</span>
-                            <h4 class="text-white mb-2 mt-2">AMIR-GPT : L'IA qui recommande l'imagerie médicale idéale
+                            <h4 class="veille-article-title mb-2 mt-2">AMIR-GPT : L'IA qui recommande l'imagerie médicale idéale
                             </h4>
                             <p class="text-gray">Des chercheurs du <strong>Beijing Friendship Hospital</strong> publient
                                 dans la revue <em>Intelligent Medicine</em> (février 2026) le modèle
@@ -276,7 +311,7 @@
                 </div>
 
                 <!-- Article 2 -->
-                <div class="card project-card p-4">
+                <div class="card project-card p-4 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/Article6.webp" class="veille-article-img shadow-lg"
@@ -284,7 +319,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">🔬 EMJ Reviews / EAU 2026 — Févr. 2026</span>
-                            <h4 class="text-white mb-2 mt-2">IA + IRM : Révolution dans le diagnostic du cancer de la
+                            <h4 class="veille-article-title mb-2 mt-2">IA + IRM : Révolution dans le diagnostic du cancer de la
                                 prostate</h4>
                             <p class="text-gray">Des recherches présentées au <strong>41ème Congrès de l'Association
                                     Européenne d'Urologie (EAU 2026)</strong> démontrent que l'IA intégrée à l'IRM
@@ -307,7 +342,7 @@
                 </div>
 
                 <!-- Résumé du mois -->
-                <div class="month-summary">
+                <div class="month-summary reveal-on-scroll">
                     <h5><i class="fas fa-vial"></i> Synthèse de Février</h5>
                     <p>Des percées techniques voient le jour avec des modèles spécialisés comme AMIR-GPT, capables de
                         prévenir les erreurs de prescription d'examens. En urologie, la combinaison de l'IA et de l'IRM
@@ -318,12 +353,12 @@
 
             <!-- ══════════════ MARS 2026 ══════════════ -->
             <div class="month-section" id="mar">
-                <div class="month-header">
+                <div class="month-header reveal-on-scroll">
                     <h3><i class="fas fa-calendar"></i> Mars 2026</h3>
                 </div>
 
                 <!-- Article 1 -->
-                <div class="card project-card p-4">
+                <div class="card project-card p-4 reveal-on-scroll">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-3">
                             <img src="images/article7.webp" class="veille-article-img shadow-lg"
@@ -331,7 +366,7 @@
                         </div>
                         <div class="col-lg-6">
                             <span class="veille-source-tag">🏛️ NIH / Nature — 4 Mars 2026</span>
-                            <h4 class="text-white mb-2 mt-2">Merlin (Stanford / NIH) : 81% de précision sur les scanners
+                            <h4 class="veille-article-title mb-2 mt-2">Merlin (Stanford / NIH) : 81% de précision sur les scanners
                                 3D abdominaux</h4>
                             <p class="text-gray">Publié le <strong>4 mars 2026 dans Nature</strong>, l'outil
                                 <strong>Merlin</strong> développé par une équipe du Dr Akshay Chaudhari (Stanford
@@ -357,7 +392,7 @@
                 </div>
 
                 <!-- Résumé du mois -->
-                <div class="month-summary">
+                <div class="month-summary reveal-on-scroll">
                     <h5><i class="fas fa-chart-line"></i> Synthèse de Mars</h5>
                     <p>Un jalon historique est franchi avec la présentation de Merlin (Stanford), une IA capable
                         d'analyser des scanners 3D avec une précision impressionnante tout en prédisant des maladies
@@ -373,14 +408,70 @@
 
 
 
+    <button class="back-to-top" id="backToTopBtn" title="Retourner en haut" aria-label="Retourner en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Footer -->
-    <footer class="text-center py-5 border-top border-secondary">
-        <p class="text-gray mt-3">© 2026 Alexis FARIA</p>
+    <footer class="veille-footer text-center py-5">
+        <div class="container">
+            <div class="footer-brand mb-2">
+                ALEXIS<span>.FARIA</span>
+            </div>
+            <p class="small text-white mb-3">
+                Étudiant en L3 Pro DAWI à l'Université Paris-Saclay & Alternant chez CMS Informatic · Veille Technologique BTS SIO
+            </p>
+            <div class="footer-links mb-3">
+                <a href="index.html#home"><i class="fas fa-home text-accent"></i> Accueil</a>
+                <a href="index.html#about"><i class="fas fa-user text-accent"></i> À Propos</a>
+                <a href="index.html#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a>
+                <a href="index.html#projects"><i class="fas fa-laptop-code text-accent"></i> Projets</a>
+                <a href="index.html#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a>
+                <a href="index.html#bts-sio"><i class="fas fa-folder-open text-accent"></i> Dossier d'évaluation</a>
+                <a href="veille.html"><i class="fas fa-satellite-dish text-accent"></i> Veille Technologique</a>
+                <a href="e4.html"><i class="fas fa-award text-accent"></i> Épreuve E4</a>
+                <a href="contact.html"><i class="fas fa-paper-plane text-accent"></i> Contact</a>
+            </div>
+            <p class="small text-white mb-0">© 2026 Alexis FARIA · Tous droits réservés.</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        const navbar = document.getElementById('mainNav');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        function updateScrollEffects() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            backToTopBtn.classList.toggle('visible', window.scrollY > 50);
+            scrollProgress.style.width = scrollHeight > 0 ? `${(scrollTop / scrollHeight) * 100}%` : '0%';
+        }
+
+        window.addEventListener('scroll', updateScrollEffects, { passive: true });
+        updateScrollEffects();
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+            revealObserver.observe(element);
+        });
+
         // Illumine le mois actuel sur la frise
         (function () {
             const currentMonth = new Date().getMonth();
@@ -397,6 +488,13 @@
         // Clic sur un mois → scroll vers la section correspondante
         document.querySelectorAll('.veille-dot-group').forEach(function (group) {
             group.addEventListener('click', function () {
+                document.querySelectorAll('.veille-dot-group').forEach(function (dotGroup) {
+                    dotGroup.querySelector('.veille-dot').classList.remove('active');
+                    dotGroup.querySelector('.veille-month').classList.remove('active');
+                });
+                group.querySelector('.veille-dot').classList.add('active');
+                group.querySelector('.veille-month').classList.add('active');
+
                 const target = group.getAttribute('data-target');
                 const section = document.getElementById(target);
                 if (section) {

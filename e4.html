@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Épreuve E4 | Alexis FARIA — BTS SIO SLAM</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Styles Principaux -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-body-warm e4-page">
+
+    <div id="scrollProgress"></div>
+
+    <!-- Barre de Navigation Sticky avec Menu Déroulant BTS SIO -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar" id="mainNav">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                ALEXIS <span>FARIA</span>
+                <span class="brand-badge d-none d-sm-inline-block">L3 PRO DAWI · PARIS-SACLAY</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu de navigation">
+                <i class="fas fa-bars-staggered text-heading fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="fas fa-home text-accent"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about"><i class="fas fa-user text-accent"></i> À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects"><i class="fas fa-laptop-code text-accent"></i> Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a></li>
+                    
+                    <!-- Menu Déroulant BTS SIO (SLAM) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarBtsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-graduation-cap text-accent"></i> BTS SIO (SLAM)
+                        </a>
+                        <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarBtsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="index.html#diplomes-certifications">
+                                    <i class="fas fa-certificate text-accent"></i> Diplômes & Certifications
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="veille.html">
+                                    <i class="fas fa-satellite-dish text-accent"></i> Veille Technologique
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item active" href="e4.html">
+                                    <i class="fas fa-award text-accent"></i> Épreuve E4
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-contact-purple text-center" href="contact.html">
+                            <i class="fas fa-paper-plane me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Dédiée à l'Épreuve E4 -->
+    <header class="py-5 hero-section d-flex align-items-center" style="min-height: 45vh;">
+        <div class="container text-center hero-content">
+            <span class="section-pill mb-3 reveal-on-scroll">
+                <i class="fas fa-award text-accent"></i> Examen BTS SIO — Épreuve Professionnelle
+            </span>
+            <h1 class="hero-title mb-2 reveal-on-scroll stagger-1">
+                Épreuve <span class="text-gradient">E4</span>
+            </h1>
+            <p class="hero-role reveal-on-scroll stagger-2">
+                Support et mise à disposition de services informatiques · Option SLAM
+            </p>
+            <p class="hero-lead mb-4 reveal-on-scroll stagger-3">
+                Dossier professionnel et réalisations techniques menées en entreprise chez <strong>Lookiz</strong> et au <strong>Lycée Polyvalent de Cachan</strong> par <strong>Alexis FARIA</strong> (actuellement en L3 Pro DAWI à l'<strong>Université Paris-Saclay</strong> et alternant chez <strong>CMS Informatic</strong>).
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap reveal-on-scroll stagger-4">
+                <a href="#tableau" class="btn btn-purple-main">
+                    <i class="fas fa-table-list"></i> Tableau de Synthèse
+                </a>
+                <a href="#pills-stage1" class="btn btn-outline-custom e4-stage-jump">
+                    <i class="fas fa-calendar-check"></i> Stage 1ère Année
+                </a>
+                <a href="#pills-stage2" class="btn btn-outline-custom e4-stage-jump">
+                    <i class="fas fa-rocket"></i> Stage 2ème Année
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Présentation & Tableau de Synthèse -->
+    <section class="py-5" id="tableau">
+        <div class="container py-lg-3">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-clipboard-check"></i> Synthèse Officielle</span>
+                <h2 class="section-title">Présentation & <span>Tableau de Synthèse</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Le cadre réglementaire de l'épreuve E4 et la matrice des compétences validées sur le référentiel BTS SIO.</p>
+            </div>
+
+            <div class="e4-overview-card mb-5 reveal-on-scroll">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <h4 class="fw-bold section-subtitle-highlight mb-3">
+                            <i class="fas fa-file-shield text-accent me-2"></i> Objectifs & Déroulement de l'Épreuve
+                        </h4>
+                        <p class="text-body">
+                            L'épreuve E4 constitue l'évaluation centrale des compétences techniques en développement applicatif du BTS SIO SLAM. Elle vise à apprécier la capacité du candidat à :
+                        </p>
+                        <ul class="text-body ps-3 mb-3">
+                            <li class="mb-2">Analyser un besoin fonctionnel et concevoir une architecture logicielle adaptée (MVC, objets JSON, bases relationnelles).</li>
+                            <li class="mb-2">Développer des solutions pérennes, maintenables et documentées (scripts Python, interfaces web).</li>
+                            <li class="mb-2">Garantir la sécurité, l'intégrité et la disponibilité des données et des services informatiques (audits de sécurité, tests de charge).</li>
+                        </ul>
+                        <p class="text-body">
+                            Le <strong>Tableau de Synthèse</strong> officiel ci-contre répertorie l'ensemble des situations professionnelles vécues durant mes deux périodes de stage chez <strong>Lookiz</strong>, associées aux compétences correspondantes du référentiel.
+                        </p>
+                        <div class="alert alert-light border border-color rounded-3 p-3 mt-3 d-flex align-items-center gap-3">
+                            <i class="fas fa-magnifying-glass-plus e4-overview-note-icon fs-4"></i>
+                            <div class="small e4-overview-note">
+                                <strong>Astuce Jury :</strong> Cliquez directement sur le tableau de synthèse pour l'afficher en haute résolution plein écran.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 text-center">
+                        <img src="Photo (stage)/tableau.jpg" class="img-fluid img-tableau lightbox-trigger" alt="Tableau de synthèse officiel BTS SIO SLAM — Alexis FARIA">
+                        <div class="zoom-hint mt-2">
+                            <i class="fas fa-search-plus"></i> Cliquez pour agrandir le tableau officiel
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Réalisations en Entreprise (Onglets des Stages) -->
+    <section class="py-5 bg-surface-alt" id="stages">
+        <div class="container py-lg-4">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-building"></i> Périodes en Entreprise</span>
+                <h2 class="section-title">Mes Réalisations chez <span>Lookiz</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Détail technique et méthodologique de mes missions de stage en 1ère et 2ème année.</p>
+            </div>
+
+            <!-- Boutons Onglets des Stages -->
+            <div class="text-center mb-5 reveal-on-scroll">
+                <div class="nav nav-pills justify-content-center gap-3" id="pills-tab" role="tablist">
+                    <button class="btn btn-outline-custom active" id="pills-stage1-tab" data-bs-toggle="pill" data-bs-target="#pills-stage1" type="button" role="tab">
+                        <i class="fas fa-calendar-check me-2"></i> <span class="e4-stage-label">STAGE 1ÈRE ANNÉE (2024 - 2025)</span>
+                    </button>
+                    <button class="btn btn-outline-custom" id="pills-stage2-tab" data-bs-toggle="pill" data-bs-target="#pills-stage2" type="button" role="tab">
+                        <i class="fas fa-award me-2"></i> <span class="e4-stage-label">STAGE 2ÈME ANNÉE (2025 - 2026)</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                
+                <!-- ==================== STAGE 1ÈRE ANNÉE ==================== -->
+                <div class="tab-pane fade show active" id="pills-stage1" role="tabpanel">
+
+                    <!-- Carte Contexte Entreprise -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3 text-center">
+                                <img src="Site finaliser/images/Ary.webp" class="img-fluid rounded-3 p-2 bg-light border" style="max-height: 180px; object-fit: contain;" alt="Peluche connectée Ary Lookiz">
+                            </div>
+                            <div class="col-md-9">
+                                <span class="badge bg-primary bg-opacity-10 text-accent px-3 py-1 rounded-pill fw-bold mb-2">Contexte Entreprise</span>
+                                <h4 class="fw-bold e4-heading-highlight">Lookiz & la Peluche Éducative Ary</h4>
+                                <p class="text-body e4-white-copy mb-0">
+                                    <strong>Lookiz</strong> est une start-up innovante concevant des outils d'apprentissage sans écran pour les jeunes enfants. Leur produit phare, <strong>Ary</strong>, est une peluche interactive capable de dialoguer, raconter des histoires et stimuler la curiosité de l'enfant grâce à un moteur conversationnel intelligent.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 1 : JSON Multilingue -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">1</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Structuration des Données JSON & Filtrage Multilingue</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Description :</strong> Le format JSON (JavaScript Object Notation) constitue la colonne vertébrale des échanges entre la peluche Ary et les serveurs applicatifs.
+                            </p>
+                            <p class="text-body">
+                                <strong>Mon rôle technique :</strong> Modélisation et hiérarchisation de centaines de sujets éducatifs. Rédaction des structures en français, traduction et adaptation culturelle en anglais, espagnol et allemand. Implémentation du champ clé <code>recommendedAge</code> pour filtrer automatiquement les récits selon l'âge de l'enfant et correction systématique des erreurs de syntaxe JSON.
+                            </p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/Fichier Json ( finalisation des améliorations).png" class="img-fluid img-standard lightbox-trigger" alt="Structure JSON avec clés et attributs éducatifs">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Fichier JSON finalisé</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/traduit en en (Json).png" class="img-fluid img-standard lightbox-trigger" alt="Clés JSON traduites en anglais">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Version multilingue (EN)</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/modification du Json avec des recommendedAge.PNG" class="img-fluid img-standard lightbox-trigger" alt="Intégration du champ recommendedAge">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Filtrage par âge recommandé</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 2 : Scripts Python Thonny -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">2</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Développement de Scripts d'Automatisation Python (Thonny)</h4>
+                        </div>
+
+                        <!-- Programme 1 -->
+                        <div class="mb-4">
+                            <h5 class="fw-bold text-accent"><i class="fas fa-magnifying-glass me-2"></i>Programme 1 : Recherche & Extraction par Mot-Clé</h5>
+                            <p class="text-body small">
+                                <strong>Objectif :</strong> Permettre aux équipes éditoriales de localiser immédiatement n'importe quel récit ou dialogue dans une arborescence complexe contenant des centaines de fichiers JSON.
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <img src="Photo (stage)/1er programme.PNG" class="img-fluid img-standard lightbox-trigger" alt="Code source Python du script de recherche">
+                                    <span class="zoom-hint"><i class="fas fa-code"></i> Code source Python (Thonny)</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="Photo (stage)/résultat du 1er programme.PNG" class="img-fluid img-standard lightbox-trigger" alt="Résultats retournés dans la console Thonny">
+                                    <span class="zoom-hint"><i class="fas fa-terminal"></i> Sortie console et données filtrées</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Programme 2 -->
+                        <div>
+                            <h5 class="fw-bold text-accent"><i class="fas fa-chart-column me-2"></i>Programme 2 : Recensement & Analyse Statistique Thématique</h5>
+                            <p class="text-body small">
+                                <strong>Objectif :</strong> Calculer la volumétrie exacte des sujets par catégorie (Espace, Histoire, Nature, Mathématiques) afin de repérer les manques et équilibrer les connaissances délivrées par la peluche.
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <img src="Photo (stage)/2eme programme.png" class="img-fluid img-standard lightbox-trigger" alt="Code Python du programme de statistiques">
+                                    <span class="zoom-hint"><i class="fas fa-code"></i> Code du script d'analyse</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="Photo (stage)/résultat du 2eme programme.png" class="img-fluid img-standard lightbox-trigger" alt="Bilan des comptages par thématique">
+                                    <span class="zoom-hint"><i class="fas fa-chart-pie"></i> Bilan statistique obtenu</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 3 : Dashboard Web Lookiz -->
+                    <div class="card project-card p-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">3</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Développement du Dashboard Web Interactif Lookiz</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Architecture :</strong> Réalisation d'une application web complète pour superviser les données de la peluche en temps réel.
+                            </p>
+                            <p class="text-body">
+                                <strong>Technologies mobilisées :</strong>
+                            </p>
+                            <ul class="text-body small ps-3">
+                                <li><strong>HTML5 :</strong> Structuration des composants (zones de métriques, hub des langues, listes de sujets).</li>
+                                <li><strong>CSS3 :</strong> Mise en page moderne avec Flexbox, adaptation responsive et thème sombre soigné.</li>
+                                <li><strong>JavaScript natif :</strong> Chargement asynchrone des données JSON et mise à jour dynamique du DOM sans rechargement de page.</li>
+                            </ul>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/html (final).png" class="img-fluid img-standard lightbox-trigger" alt="Code HTML du dashboard">
+                                <span class="zoom-hint"><i class="fas fa-code"></i> Code HTML</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/css (Final).png" class="img-fluid img-standard lightbox-trigger" alt="Feuille de styles CSS">
+                                <span class="zoom-hint"><i class="fas fa-palette"></i> Feuille de styles CSS</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage)/le site (Final).png" class="img-fluid img-standard lightbox-trigger" alt="Rendu final du dashboard Lookiz">
+                                <span class="zoom-hint"><i class="fas fa-desktop"></i> Interface du Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ==================== STAGE 2ÈME ANNÉE ==================== -->
+                <div class="tab-pane fade" id="pills-stage2" role="tabpanel">
+
+                    <!-- Contexte Immersion 2ème Année -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3 text-center">
+                                <img src="Site finaliser/images/Ary.webp" class="img-fluid rounded-3 p-2 bg-light border" style="max-height: 180px; object-fit: contain;" alt="Ary Lookiz 2ème année">
+                            </div>
+                            <div class="col-md-9">
+                                <span class="badge bg-primary bg-opacity-10 text-accent px-3 py-1 rounded-pill fw-bold mb-2">Continuité & Montée en Compétences</span>
+                                <h4 class="fw-bold e4-heading-highlight">Retour chez Lookiz : IA Générative, Multimédia & Cybersécurité</h4>
+                                <p class="text-body mb-0">
+                                    Lors de ma seconde immersion, la start-up Lookiz s'est positionnée comme une référence nationale avec une importante couverture télévisée sur <strong>M6, LCI et Télématin (France 2)</strong>. Mes missions ont franchi un palier technique vers l'automatisation par <strong>OpenAI</strong>, le mixage audio et les <strong>audits de cybersécurité applicative</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 1 : IA & Récits -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">1</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Génération Automatisée de Récits avec OpenAI & Standardisation JSON</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Réalisation :</strong> Développement de scripts Python connectés à l'API OpenAI pour transformer des instructions brutes en histoires complètes segmentées (titre, moralité, fiche de personnages, répliques). Création d'une fonction de standardisation qui formate et range automatiquement chaque récit généré dans un répertoire dédié.
+                            </p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Programme_python.png" class="img-fluid img-standard lightbox-trigger" alt="Script Python OpenAI">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Script Python d'interaction IA</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Resultat_programme_python.png" class="img-fluid img-standard lightbox-trigger" alt="Résultats JSON générés">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Récit JSON généré</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Dossier_bench.png" class="img-fluid img-standard lightbox-trigger" alt="Organisation des dossiers de benchmark">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Gestion des répertoires</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 2 : Système Éducatif & Rapports PDF -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">2</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Système Éducatif & Génération Automatisée de Rapports PDF</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Réalisation :</strong> Programmation d'un module d'apprentissage (calculs, sciences, géographie) vérifiant la pertinence des réponses fournies aux enfants. Intégration d'une bibliothèque de génération de documents PDF pour éditer automatiquement des rapports d'audit et de suivi de conformité.
+                            </p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/pdf.png" class="img-fluid img-standard lightbox-trigger" alt="Rapport PDF généré par Python">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Exemple de rapport PDF généré</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/500_pdf_python.png" class="img-fluid img-standard lightbox-trigger" alt="Génération par lots de 500 fichiers PDF">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Génération par lots de documents</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Dossier_bench.png" class="img-fluid img-standard lightbox-trigger" alt="Archivage structuré des tests">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Archivage des benchmarks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 3 : Livres Audio & Multimédia -->
+                    <div class="card project-card p-4 mb-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">3</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Création Automatisée de Livres Audio (Musique & Voix avec Audacity)</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Réalisation :</strong> Mise en place d'un pipeline complet transformant les récits écrits en livres audio vivants. Préparation de pistes musicales sous <strong>Audacity</strong> et écriture d'un script Python chargeant et mixant les voix de synthèse avec des ambiances sonores adaptées à chaque séquence émotionnelle de l'histoire.
+                            </p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Audacity_musique.png" class="img-fluid img-standard lightbox-trigger" alt="Édition des pistes sonores sous Audacity">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Traitement audio Audacity</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Programme musique.png" class="img-fluid img-standard lightbox-trigger" alt="Programme Python de mixage audio">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Script Python de mixage</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Programme_voix.png" class="img-fluid img-standard lightbox-trigger" alt="Intégration de la narration vocale">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Génération finale du livre audio MP3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activité 4 : Cybersécurité & Tests IA -->
+                    <div class="card project-card project-cyber-card p-4 reveal-on-scroll">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="badge e4-step-badge rounded-pill px-3 py-2 fw-bold">4</span>
+                            <h4 class="fw-bold e4-heading-highlight mb-0">Audit de Cybersécurité & Détection d'Incohérences IA-to-IA</h4>
+                        </div>
+                        <div class="task-description">
+                            <p class="text-body">
+                                <strong>Réalisation :</strong> Campagne d'audit de sécurité poussée sur la peluche Ary via des tests de charge automatisés (1 000 requêtes en rafale) pour éprouver la résistance du service face aux tentatives de déni ou d'injections. Synchronisation d'un protocole d'échange entre deux modèles d'IA pour identifier les failles de raisonnement et consigner les anomalies dans des rapports PDF.
+                            </p>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Cyber_viseul.V2.png" class="img-fluid img-standard lightbox-trigger" alt="Dashboard de monitoring des tests de sécurité">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Tableau de bord de l'audit</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Cyber_visuel.png" class="img-fluid img-standard lightbox-trigger" alt="Analyse des failles et requêtes">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Métriques de robustesse</span>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="Photo (stage - 2eme annee)/Programme_cyber.png" class="img-fluid img-standard lightbox-trigger" alt="Code Python du banc de test de charge">
+                                <span class="zoom-hint"><i class="fas fa-search-plus"></i> Code du script d'audit cyber</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Lightbox Universel pour Zoomer les Images Techniques -->
+    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content custom-modal">
+                <div class="modal-header custom-modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title fw-bold text-heading fs-6" id="lightboxModalLabel">Aperçu Technique</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body custom-modal-body">
+                    <img src="" id="lightboxModalImg" class="img-fluid" alt="Capture agrandie">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTopBtn" title="Retourner en haut" aria-label="Retourner en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer Épuré -->
+    <footer>
+        <div class="container text-center">
+            <div class="footer-brand mb-2">
+                ALEXIS<span>.FARIA</span>
+            </div>
+            <p class="small text-white mb-3">
+                Étudiant en L3 Pro DAWI à l'Université Paris-Saclay & Alternant chez CMS Informatic · Dossier Épreuve E4 BTS SIO
+            </p>
+            <div class="footer-links mb-3">
+                <a href="index.html#home"><i class="fas fa-home text-accent"></i> Accueil</a>
+                <a href="index.html#about"><i class="fas fa-user text-accent"></i> À Propos</a>
+                <a href="index.html#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a>
+                <a href="index.html#projects"><i class="fas fa-laptop-code text-accent"></i> Projets</a>
+                <a href="index.html#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a>
+                <a href="index.html#bts-sio"><i class="fas fa-folder-open text-accent"></i> Dossier d'évaluation</a>
+                <a href="veille.html"><i class="fas fa-satellite-dish text-accent"></i> Veille Technologique</a>
+                <a href="e4.html"><i class="fas fa-award text-accent"></i> Épreuve E4</a>
+                <a href="contact.html"><i class="fas fa-paper-plane text-accent"></i> Contact</a>
+            </div>
+            <p class="small text-white-fixed mb-0">
+                © 2026 Alexis FARIA · Tous droits réservés
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts Bootstrap 5 & Lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Effet Navbar au Scroll
+        const navbar = document.getElementById('mainNav');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        function updateScrollEffects() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            backToTopBtn.classList.toggle('visible', window.scrollY > 50);
+            scrollProgress.style.width = scrollHeight > 0 ? `${(scrollTop / scrollHeight) * 100}%` : '0%';
+        }
+
+        window.addEventListener('scroll', updateScrollEffects, { passive: true });
+        updateScrollEffects();
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+            revealObserver.observe(element);
+        });
+
+        // Lightbox Universel pour les Images
+        const lightboxModalEl = document.getElementById('imageLightboxModal');
+        const lightboxModal = new bootstrap.Modal(lightboxModalEl);
+        const modalImg = document.getElementById('lightboxModalImg');
+        const modalTitle = document.getElementById('lightboxModalLabel');
+
+        document.querySelectorAll('.lightbox-trigger, .img-standard, .img-tableau').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modalTitle.textContent = img.alt || "Aperçu technique du projet";
+                lightboxModal.show();
+            });
+        });
+    </script>
+</body>
+
+</html>

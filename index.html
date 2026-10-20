@@ -4,761 +4,1079 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Alexis FARIA</title>
+    <title>Portfolio | Alexis FARIA — Développeur Web & Applicatif</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Style Principal -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
+    <!-- Barre de Progression de Scroll -->
+    <div id="scrollProgress"></div>
+
+    <!-- Barre de Navigation Sticky avec Effet Glassmorphism -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar" id="mainNav">
         <div class="container-fluid px-lg-5">
-            <a class="navbar-brand fw-bold" href="#">PORTFOLIO<span>.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="#home">
+                ALEXIS <span>FARIA</span>
+                <span class="brand-badge d-none d-sm-inline-block">L3 PRO DAWI · PARIS-SACLAY</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu de navigation">
+                <i class="fas fa-bars-staggered text-heading fs-4"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user"></i> À Propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#parcours"><i class="fas fa-file-alt"></i>
-                            Parcours</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-columns"></i> Projets</a>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home text-accent"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-user text-accent"></i> À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fas fa-laptop-code text-accent"></i> Réalisations</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a></li>
+
+                    <!-- Menu Déroulant BTS SIO (SLAM) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarBtsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-graduation-cap text-accent"></i> BTS SIO (SLAM)
+                        </a>
+                        <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarBtsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#bts-sio">
+                                    <i class="fas fa-folder-open"></i> Dossier d'évaluation
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="veille.html">
+                                    <i class="fas fa-satellite-dish"></i> Veille Technologique
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="e4.html">
+                                    <i class="fas fa-award"></i> Épreuve E4
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#veilles"><i class="fas fa-list"></i> Veilles</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#e4"><i class="fas fa-laptop-code"></i> Épreuve
-                            E4</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="nav-link btn-contact-purple text-center" href="contact.html">Contact</a>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-contact-purple text-center" href="contact.html">
+                            <i class="fas fa-paper-plane me-1"></i> Contact
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="home" class="hero-section d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold">Alexis <span>FARIA</span></h1>
-            <p class="lead text-gray">Étudiant en 2ème année de BTS SIO SLAM</p>
-            <div class="mt-4">
-                <a href="#projects" class="btn btn-purple-main me-2">Mes Réalisations</a>
-                <a href="CV-Slam.pdf" target="_blank" class="btn btn-outline-custom">Consulter mon CV</a>
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container hero-content text-center">
+
+            <h1 class="hero-title reveal-on-scroll">
+                Alexis <span class="text-gradient">FARIA</span>
+            </h1>
+
+            <div class="hero-role reveal-on-scroll stagger-1">
+                <span>Développeur Web & Applicatif</span>
             </div>
+
+            <p class="hero-lead reveal-on-scroll stagger-2">
+                Étudiant de <strong>20 ans</strong>, diplômé du <strong>BTS SIO option SLAM</strong> au Lycée Polyvalent de Cachan, je poursuis actuellement une <strong>Licence Professionnelle Métiers de l'Informatique</strong> (parcours MIAW, option DAWI) à l'<strong>Université Évry Paris-Saclay</strong>. En parallèle, je développe mes compétences en entreprise chez <strong>CMS Informatic</strong> en tant que développeur en alternance.
+            </p>
+
+            <!-- Logos Partenaires -->
+            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mb-4 reveal-on-scroll stagger-3">
+                <a href="https://www.univ-evry.fr/accueil.html" target="_blank" rel="noopener noreferrer" class="partner-logo-box text-decoration-none" title="Université d'Évry Paris-Saclay">
+                    <img src="images/logo-universite-evry-paris-saclay.png" alt="Logo de l'Université Évry Paris-Saclay" class="logo-partner-university">
+                </a>
+                <a href="https://cms-informatic.com" target="_blank" rel="noopener noreferrer" class="partner-logo-box text-decoration-none" title="CMS Informatic">
+                    <img src="images/cms-informatic-logo.png" alt="Logo de CMS Informatic" class="logo-partner-company">
+                </a>
+            </div>
+
+            <!-- Boutons d'Action -->
+            <div class="hero-buttons reveal-on-scroll stagger-4">
+                <a href="#projects" class="btn btn-purple-main">
+                    <i class="fas fa-folder-open"></i> Découvrir mes réalisations
+                </a>
+                <a href="CV.pdf" target="_blank" class="btn btn-outline-custom">
+                    <i class="fas fa-file-pdf text-accent"></i> Consulter mon CV
+                </a>
+                <a href="contact.html" class="btn btn-outline-custom">
+                    <i class="fas fa-envelope text-accent"></i> Me contacter
+                </a>
+            </div>
+
+            <!-- Cartes Highlights -->
+            <div class="row g-3 hero-highlights justify-content-center text-start">
+                <div class="col-md-6 col-lg-3">
+                    <div class="highlight-card reveal-on-scroll stagger-1">
+                        <div class="highlight-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title text-white fw-bold">Paris-Saclay</div>
+                            <p class="highlight-desc">L3 Pro MIAW · DAWI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="highlight-card reveal-on-scroll stagger-2">
+                        <div class="highlight-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title text-white fw-bold">CMS Informatic</div>
+                            <p class="highlight-desc">Développeur en Alternance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="highlight-card reveal-on-scroll stagger-3">
+                        <div class="highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title text-white fw-bold">BTS SIO SLAM</div>
+                            <p class="highlight-desc">Diplôme Obtenu · Cachan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="highlight-card reveal-on-scroll stagger-4">
+                        <div class="highlight-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <div class="highlight-title text-white fw-bold">Web, Python & IA</div>
+                            <p class="highlight-desc">Applications & Sécurité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
+    <!-- Section À Propos -->
     <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title">À Propos de moi</h2>
-            <div class="row align-items-center">
+        <div class="container py-lg-4">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-user-check"></i> Profil & Parcours</span>
+                <h2 class="section-title">À Propos de <span>Moi</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Mon histoire, mes études, mes expériences professionnelles et les valeurs qui guident mon travail au quotidien.</p>
+            </div>
 
-                <div class="col-md-7">
-                    <div class="about-text pe-lg-4">
-                        <p>Je m’appelle <strong>Alexis FARIA</strong>, j’ai 19 ans et je suis actuellement en deuxième
-                            année de BTS SIO, option SLAM, au <strong>lycée polyvalent de Cachan</strong>. Depuis
-                            plusieurs années, je m’intéresse de près au monde de l’informatique, un domaine qui me
-                            passionne autant pour son aspect technique que pour les possibilités de création et de
-                            résolution de problèmes qu’il offre.</p>
-
-                        <p>Au cours de <strong>formation</strong>, j’ai appris à développer des applications, à
-                            comprendre le fonctionnement des systèmes informatiques et à travailler sur des projets
-                            concrets, ce qui m’a permis de renforcer mon esprit logique, ma rigueur et mon autonomie. Le
-                            développement informatique représente pour moi un domaine en constante évolution, dans
-                            lequel j’aime apprendre, expérimenter et progresser.</p>
-
-                        <p>En dehors de mes études, je travaille chez <strong>McDonald’s</strong> dans le cadre
-                            <strong>d’un contrat étudiant</strong>. Cette expérience professionnelle m’a permis de
-                            développer des compétences essentielles comme le sens des responsabilités, le travail en
-                            équipe, la gestion du temps et la capacité à rester efficace dans un environnement dynamique
-                            et exigeant. Elle m’aide également à gagner en autonomie tout en conciliant vie
-                            professionnelle et études.
+            <div class="row g-4 align-items-start">
+                
+                <!-- Colonne Gauche : Récit Détaillé -->
+                <div class="col-lg-7">
+                    
+                    <!-- Carte 1 : Qui suis-je -->
+                    <div class="about-card reveal-on-scroll">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fas fa-user"></i></div>
+                            <div>
+                                <h4 class="about-card-title text-white">Qui suis-je ?</h4>
+                                <span class="small text-accent">Passionné d'informatique depuis toujours</span>
+                            </div>
+                        </div>
+                        <p class="text-white-readable">
+                            Je m'appelle <strong>Alexis FARIA</strong>, j'ai <strong>21 ans</strong> et je suis passionné d'informatique. J'aime ce domaine pour sa dimension technique et les possibilités de création, d'automatisation et de résolution de problèmes qu'il offre.
+                            Curieux, j'aime découvrir de nouvelles technologies et explorer différentes façons de concevoir des logiciels. La programmation est pour moi une passion et un moyen de créer des solutions utiles.
                         </p>
-
-                        <p>Parallèlement, je consacre une partie de mon temps libre à <strong>la musculation</strong>,
-                            une activité qui m’aide à me dépasser et à maintenir une discipline personnelle. Je suis
-                            aussi passionné par <strong>les jeux vidéo</strong> et <strong>les séries</strong>, qui
-                            représentent pour moi des moments de détente mais aussi une source d’inspiration à travers
-                            leurs univers et leurs scénarios.</p>
                     </div>
+
+                    <!-- Carte 2 : Ma Formation -->
+                    <div class="about-card reveal-on-scroll">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fas fa-university"></i></div>
+                            <div>
+                                <h4 class="about-card-title text-white">Ma Formation</h4>
+                                <span class="small text-accent">Du BTS SIO SLAM à l'Université Paris-Saclay</span>
+                            </div>
+                        </div>
+                        <p class="text-white-readable">
+                            Après avoir suivi et validé avec succès mon <strong>BTS SIO (Services Informatiques aux Organisations), option SLAM</strong> (Solutions Logicielles et Applications Métiers) au <strong>Lycée Polyvalent de Cachan</strong>, j'ai choisi d'approfondir mes compétences vers l'excellence universitaire.
+                        </p>
+                        <p class="text-white-readable">
+                            Je poursuis actuellement mes études en <strong>Licence Professionnelle Métiers de l'Informatique</strong>, au sein du parcours <strong>MIAW</strong> (Métiers de l'Informatique : Applications Web), option <strong>DAWI</strong> (Développement d'Applications Web et Intranet) à l'<strong>Université Évry Paris-Saclay</strong>, établissement de renommée mondiale. Cette formation me permet d'acquérir des compétences avancées en architecture client-serveur, en développement de services web sécurisés et en conduite de projets agiles.
+                        </p>
+                        <div class="quote-highlight mt-3">
+                            <i class="fas fa-quote-left text-accent me-2"></i> « Concevoir du code ne consiste pas seulement à faire fonctionner un programme, mais à bâtir une solution pérenne, ergonomique et sécurisée pour l'utilisateur final. »
+                        </div>
+                    </div>
+
+                    <!-- Carte 3 : Mon Alternance chez CMS Informatic -->
+                    <div class="about-card reveal-on-scroll">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fas fa-briefcase"></i></div>
+                            <div>
+                                <h4 class="about-card-title text-white">Mon Alternance chez CMS Informatic</h4>
+                                <span class="small text-accent">Immersion Professionnelle & Conception Logicielle</span>
+                            </div>
+                        </div>
+                        <p class="text-white-readable">
+                            Dans le cadre de ma Licence Professionnelle DAWI, j'évolue en tant que <strong>développeur en alternance chez CMS Informatic</strong>. Cette opportunité me place au cœur des problématiques techniques réelles d'une entreprise informatique.
+                        </p>
+                        <p class="text-white-readable">
+                            Au sein de l'équipe, je participe activement au <strong>développement, à la maintenance et à l'optimisation d'applications web et intranet</strong>. Cette expérience concrète me permet de confronter la théorie universitaire aux exigences de production, de respecter des délais de livraison stricts, de maîtriser le travail collaboratif sous Git et de comprendre les besoins métiers des clients pour leur délivrer des outils logiciels sur-mesure.
+                        </p>
+                    </div>
+
+                    <!-- Carte 4 : Expériences & Savoir-être -->
+                    <div class="about-card reveal-on-scroll">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fas fa-users-gear"></i></div>
+                            <div>
+                                <h4 class="about-card-title text-white">Mes Expériences & Savoir-être</h4>
+                                <span class="small text-accent">McDonald's, musculation & discipline personnelle</span>
+                            </div>
+                        </div>
+                        <p class="text-white-readable">
+                            Mon contrat étudiant chez <strong>McDonald's</strong> m'a appris à prendre des responsabilités, à communiquer efficacement en équipe et à garder mon calme pendant les périodes de forte activité.
+                        </p>
+                        <p class="text-white-readable">
+                            La <strong>musculation</strong> m'apporte régularité et persévérance. Cette discipline m'aide aussi à avancer avec patience face aux difficultés rencontrées dans mes projets.
+                        </p>
+                        <p class="text-white-readable mb-0">
+                            J'aime également les <strong>jeux vidéo et les séries</strong>. Ils nourrissent ma curiosité pour les scénarios, l'ergonomie des interfaces (UI/UX) et le fonctionnement des systèmes interactifs.
+                        </p>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4 ms-lg-auto">
-                    <h4 class="text-white mb-3 fw-bold">Compétences</h4>
+                <!-- Colonne Droite : Grille de Compétences -->
+                <div class="col-lg-5 skills-column">
+                    <div class="skills-container reveal-on-scroll">
+                        
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h4 class="fw-bold text-white d-flex align-items-center gap-2 mb-0">
+                                <i class="fas fa-layer-group text-accent"></i> Palette Technique
+                            </h4>
+                            <span class="badge bg-primary bg-opacity-10 text-accent px-3 py-1 rounded-pill small fw-bold">
+                                L3 Pro DAWI
+                            </span>
+                        </div>
 
-                    <div class="skills-grid d-flex flex-wrap gap-2">
-                        <span class="badge badge-skill m-0">HTML/CSS</span>
-                        <span class="badge badge-skill m-0">SQL</span>
-                        <span class="badge badge-skill m-0">Python</span>
-                        <span class="badge badge-skill m-0">Json</span>
-                        <span class="badge badge-skill m-0">Cybersécurité</span>
-                        <span class="badge badge-skill m-0">UML/MVC</span>
+                        <!-- Établissement de Référence -->
+                        <div class="p-3 mb-4 rounded-3 border border-color bg-surface-alt text-center">
+                            <div class="small section-subtitle-highlight text-uppercase fw-bold mb-2">Formation en Cours</div>
+                            <img src="images/logo-universite-evry-paris-saclay.png" alt="Université Évry Paris-Saclay" class="logo-partner-university mb-2">
+                            <div class="fw-bold text-heading small">Université Évry Paris-Saclay</div>
+                            <div class="small text-accent">Licence Pro MIAW · Parcours DAWI</div>
+                        </div>
+
+                        <!-- Catégorie Web & Intranet -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-globe"></i> Développement Web & Intranet
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-skill"><i class="fab fa-html5"></i> HTML5 / CSS3</span>
+                                <span class="badge-skill"><i class="fab fa-js"></i> JavaScript</span>
+                                <span class="badge-skill"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                                <span class="badge-skill"><i class="fas fa-network-wired"></i> Applications Intranet</span>
+                                <span class="badge-skill"><i class="fas fa-mobile-screen"></i> Responsive Design</span>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie Back & Données -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-server"></i> Back-End & Architectures Données
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-skill"><i class="fab fa-python"></i> Python </span>
+                                <span class="badge-skill"><i class="fas fa-database"></i> SQL / Bases Relationnelles</span>
+                                <span class="badge-skill"><i class="fas fa-file-code"></i> JSON Structuré & API</span>
+                                <span class="badge-skill"><i class="fas fa-sitemap"></i> Architecture MVC</span>
+                                <span class="badge-skill"><i class="fas fa-diagram-project"></i> Modélisation UML & POO</span>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie Sécurité & IA -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-shield-halved"></i> Cybersécurité, Audit & IA
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-skill"><i class="fas fa-user-shield"></i> Détection de Failles</span>
+                                <span class="badge-skill"><i class="fas fa-robot"></i> Intégration IA / OpenAI</span>
+                                <span class="badge-skill"><i class="fas fa-file-pdf"></i> Génération de Rapports PDF</span>
+                                <span class="badge-skill"><i class="fas fa-headphones"></i> Audacity & Audio</span>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie Outils -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-toolbox"></i> Outils & Environnements
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-skill"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+                                <span class="badge-skill"><i class="fas fa-file-excel"></i> Excel / VBA (TOSA)</span>
+                                <span class="badge-skill"><i class="fas fa-laptop"></i> Compétences numériques (Pix)</span>
+                                <span class="badge-skill"><i class="fas fa-code"></i> VS Code & Thonny</span>
+                                <span class="badge-skill"><i class="fab fa-windows"></i> Windows & Linux</span>
+                                <span class="badge-skill"><i class="fas fa-list-check"></i> Méthodes Agiles</span>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie Savoir-Être -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-users-gear"></i> Savoir-Être & Rigueur Métier
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-skill"><i class="fas fa-check-double"></i> Esprit d'Équipe</span>
+                                <span class="badge-skill"><i class="fas fa-stopwatch"></i> Gestion du Stress & Délais</span>
+                                <span class="badge-skill"><i class="fas fa-bullseye"></i> Autonomie & Curiosité</span>
+                                <span class="badge-skill"><i class="fas fa-clock"></i> Ponctualité Exemplaire</span>
+                            </div>
+                        </div>
+
+                        <!-- Catégorie Langues -->
+                        <div class="skills-category">
+                            <div class="skills-category-title">
+                                <i class="fas fa-language"></i> Langues
+                            </div>
+                            <div class="d-flex flex-column align-items-start gap-2">
+                                <span class="badge-skill"><i class="fas fa-comment"></i> Français : courant</span>
+                                <span class="badge-skill"><i class="fas fa-comment"></i> Anglais : B1</span>
+                                <span class="badge-skill"><i class="fas fa-comment"></i> Espagnol : A2</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
 
-    <section id="parcours" class="py-5 bg-darker">
-        <div class="container">
-            <h2 class="section-title text-center">Mon Parcours</h2>
-            <div class="timeline mt-5">
-                <div class="timeline-item">
-                    <h5>Deuxième stage de développeur web</h5>
-                    <p class="text-purple">Lookiz, Paris | 2026</p>
-                    <p class="small text-gray">Stage de deuxième année dans l'entreprise Lookiz.</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>BTS SIO (Service informatique aux Organisations) - 2ème Année</h5>
-                    <p class="text-purple">Lycée polyvalent, Cachan | 2025 - 2026</p>
-                    <p class="small text-gray">BTS SIO spécialité Slam (Développement web)</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>Premier stage de développeur web</h5>
-                    <p class="text-purple">Lookiz, Paris | 2025</p>
-                    <p class="small text-gray">Stage de première année dans l'entreprise Lookiz.</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>BTS SIO (Service informatique aux Organisations) - 1er Année</h5>
-                    <p class="text-purple">Lycée polyvalent, Cachan | 2024 - 2025</p>
-                    <p class="small text-gray">BTS SIO les bases de l'informatique et du rédeau.</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>Baccalauréat Général</h5>
-                    <p class="text-purple">Lycée Albert Einstein, Sainte-Geneviève-des-Bois | 2023 - 2024</p>
-                    <p class="small text-gray">Bac option mathématique et NSI (Numérique Science informatique).</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>Brevet des Collèges</h5>
-                    <p class="text-purple">Collège Jean Macé, Sainte-Geneviève-des-Bois | 2020 - 2021</p>
-                </div>
-                <div class="timeline-item">
-                    <h5>Stage automobile</h5>
-                    <p class="text-purple">Garage, Arpajon | 2020 - 2021</p>
-                    <p class="small text-gray">Stage pour mon brevet dans une entreprise automobile.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-5 pb-5">
-        <div class="container">
-            <h2 class="section-title">Mes Projets Personnels</h2>
-            <div class="row g-4 mt-2">
-                <div class="col-md-6">
-                    <div class="card project-card h-100">
-                        <div class="card-body p-4">
-                            <i class="fas fa-briefcase fa-2x mb-3 text-purple"></i>
-                            <h5 class="card-title text-white">Site Web Lookiz</h5>
-                            <p class="card-text text-gray small">Développement d'un site web professionnel durant mon
-                                stage chez Lookiz.</p>
-                            <a href="Site finaliser/dashboard.html" target="_blank"
-                                class="btn btn-sm btn-purple-visit">Visiter le site</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card project-card h-100">
-                        <div class="card-body p-4">
-                            <i class="fas fa-sun fa-2x mb-3 text-purple"></i>
-                            <h5 class="card-title text-white">Système Solaire Éducatif</h5>
-                            <p class="card-text text-gray small">Site interactif présentant les planètes avec des
-                                données scientifiques.</p>
-                            <a href="Projet info/index.html" target="_blank" class="btn btn-sm btn-purple-visit">Visiter
-                                le site</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card project-card h-100">
-                        <div class="card-body p-4">
-                            <i class="fas fa-globe fa-2x mb-3 text-purple"></i>
-                            <h5 class="card-title text-white">Patrimoine Portugais</h5>
-                            <p class="card-text text-gray small">Site vitrine utilisant Bootstrap.</p>
-                            <a href="Portugal (Projet)/index.html" target="_blank"
-                                class="btn btn-sm btn-purple-visit">Visiter
-                                le site</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card project-card h-100">
-                        <div class="card-body p-4">
-                            <i class="fab fa-python fa-2x mb-3 text-purple"></i>
-                            <h5 class="card-title text-white">Jeu Vidéo Python</h5>
-                            <p class="card-text text-gray small">Conception d'un jeu vidéo avec interface Tkinter.</p>
-                            <a href="Jeux vidéos/index.html" target="_blank" class="btn btn-sm btn-purple-visit">Visiter
-                                le site</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Section Parcours (Timeline) -->
+    <section id="parcours" class="py-5 bg-surface-alt">
+        <div class="container py-lg-4">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-route"></i> Évolution Académique & Pro</span>
+                <h2 class="section-title">Mon <span>Parcours</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Toutes les étapes clés de ma formation et de mes expériences en entreprise.</p>
             </div>
 
-            <!-- Sous-section Projets Professionnels -->
-            <div class="mt-5">
-                <h3 class="section-title">Mes Projets Professionnels</h3>
-
-                <!-- ── Ligne 1 : Stage 1ère Année ── -->
-                <p class="text-gray small mt-3 mb-2 fw-semibold"
-                    style="letter-spacing:1px; text-transform:uppercase; opacity:0.6;">Stage 1ère Année — Lookiz
-                    &nbsp;·&nbsp; 2024 – 2025</p>
-                <div class="row g-4">
-
-                    <!-- Carte 1A : Dashboard Web & Données -->
-                    <div class="col-md-6">
-                        <div class="card project-card project-pro-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="pro-badge me-3">
-                                        <i class="fas fa-building fa-lg text-purple"></i>
-                                    </div>
-                                    <span class="pro-year-badge">2024 – 2025</span>
-                                </div>
-                                <h5 class="card-title text-white mb-1">Stage 1ère Année — Lookiz</h5>
-                                <p class="text-purple small fw-semibold mb-2">Développeur Web & Données</p>
-                                <p class="card-text text-gray small">Structuration de données JSON multilingues et
-                                    développement d'un <strong class="text-white">dashboard web interactif</strong> pour
-                                    visualiser les statistiques de la peluche IA <strong class="text-white">Ary</strong>
-                                    (HTML, CSS, JavaScript).</p>
-                                <div class="d-flex flex-wrap gap-2 mt-3">
-                                    <span class="badge-tool-sm">HTML / CSS</span>
-                                    <span class="badge-tool-sm">JavaScript</span>
-                                    <span class="badge-tool-sm">JSON</span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="timeline">
+                
+                <!-- L3 Pro Paris-Saclay -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-star me-1"></i> Formation en Cours</span>
+                        <span class="timeline-location"><i class="fas fa-university"></i> Université Évry Paris-Saclay</span>
                     </div>
-
-                    <!-- Carte 1B : Programmes Python -->
-                    <div class="col-md-6">
-                        <div class="card project-card project-pro-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="pro-badge me-3">
-                                        <i class="fab fa-python fa-lg text-purple"></i>
-                                    </div>
-                                    <span class="pro-year-badge">2024 – 2025</span>
-                                </div>
-                                <h5 class="card-title text-white mb-1">Stage 1ère Année — Lookiz</h5>
-                                <p class="text-purple small fw-semibold mb-2">Développeur Python & Automatisation</p>
-                                <p class="card-text text-gray small">Création de scripts Python d'automatisation pour
-                                    analyser et filtrer les fichiers JSON d'<strong class="text-white">Ary</strong> :
-                                    recherche par mot-clé, comptage de sujets par thématique et détection d'erreurs de
-                                    syntaxe.</p>
-                                <div class="d-flex flex-wrap gap-2 mt-3">
-                                    <span class="badge-tool-sm">Python</span>
-                                    <span class="badge-tool-sm">Scripts automatisés</span>
-                                    <span class="badge-tool-sm">JSON</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ── Ligne 2 : Stage 2ème Année ── -->
-                <p class="text-gray small mt-4 mb-2 fw-semibold"
-                    style="letter-spacing:1px; text-transform:uppercase; opacity:0.6;">Stage 2ème Année — Lookiz
-                    &nbsp;·&nbsp; 2025 – 2026</p>
-                <div class="row g-4">
-
-                    <!-- Carte 2A : IA & Livre Audio -->
-                    <div class="col-md-6">
-                        <div class="card project-card project-pro-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="pro-badge me-3">
-                                        <i class="fas fa-robot fa-lg text-purple"></i>
-                                    </div>
-                                    <span class="pro-year-badge">2025 – 2026</span>
-                                </div>
-                                <h5 class="card-title text-white mb-1">Stage 2ème Année — Lookiz</h5>
-                                <p class="text-purple small fw-semibold mb-2">Développeur IA & Livre Audio</p>
-                                <p class="card-text text-gray small">Génération automatique d'histoires avec l'IA via
-                                    <strong class="text-white">OpenAI</strong>, création d'un livre audio complet
-                                    (Python + Audacity) en mixant narration vocale et musiques de fond adaptées à chaque
-                                    récit.
-                                </p>
-                                <div class="d-flex flex-wrap gap-2 mt-3">
-                                    <span class="badge-tool-sm">Python</span>
-                                    <span class="badge-tool-sm">IA / OpenAI</span>
-                                    <span class="badge-tool-sm">Audacity</span>
-                                    <span class="badge-tool-sm">PDF</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Carte 2B : Cybersécurité -->
-                    <div class="col-md-6">
-                        <div class="card project-card project-pro-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="pro-badge me-3">
-                                        <i class="fas fa-shield-alt fa-lg text-purple"></i>
-                                    </div>
-                                    <span class="pro-year-badge">2025 – 2026</span>
-                                </div>
-                                <h5 class="card-title text-white mb-1">Stage 2ème Année — Lookiz</h5>
-                                <p class="text-purple small fw-semibold mb-2">Cybersécurité & Audit de Sécurité</p>
-                                <p class="card-text text-gray small">Audit de sécurité de l'IA <strong
-                                        class="text-white">Ary</strong> via 1 000 requêtes automatisées, détection de
-                                    failles, dialogues IA-to-IA pour repérer les incohérences et génération de <strong
-                                        class="text-white">rapports PDF</strong>.</p>
-                                <div class="d-flex flex-wrap gap-2 mt-3">
-                                    <span class="badge-tool-sm">Tests automatisés</span>
-                                    <span class="badge-tool-sm">Python</span>
-                                    <span class="badge-tool-sm">IA-to-IA</span>
-                                    <span class="badge-tool-sm">Audit sécurité</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-    </section>
-
-
-    <section id="veilles" class="py-5 bg-darker">
-        <div class="container">
-            <h2 class="section-title">Veille Technologique</h2>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="card project-card p-4 mb-5 border-purple-light">
-                        <h4 class="text-purple mb-3">Qu'est-ce que la veille technologique ?</h4>
-                        <p class="text-gray">
-                            La veille technologique consiste à surveiller les évolutions techniques et les innovations
-                            dans un secteur d'activité donné pour anticiper les changements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="text-white mb-3">Sujet de ma veille : L'IA dans le diagnostic médical</h4>
-                    <p class="text-gray">Exploration du rôle du Deep Learning dans l'analyse des imageries médicales.
+                    <h5>Licence Professionnelle Métiers de l'Informatique (MIAW · DAWI)</h5>
+                    <p class="small text-accent mb-2">Période : 2026 - 2027 · Paris-Saclay</p>
+                    <p class="timeline-desc">
+                        Parcours <strong>MIAW</strong> (Métiers de l'Informatique : Applications Web), option <strong>DAWI</strong> (Développement d'Applications Web et Intranet). Approfondissement des architectures client-serveur avancées, développement de services web et intranets d'entreprise, sécurisation des applications et conduite de projets en méthodes agiles.
                     </p>
                 </div>
-            </div>
-            <!-- Frise chronologique interactive -->
-            <section class="py-5 bg-darker">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 mx-auto">
-                            <div class="veille-timeline-container">
-                                <div class="veille-timeline-line"></div>
-                                <div class="veille-timeline-dots">
-                                    <div class="veille-dot-group" data-month="11" data-target="dec">
-                                        <div class="veille-dot"></div>
-                                        <span class="veille-month">Décembre</span>
-                                    </div>
-                                    <div class="veille-dot-group" data-month="0" data-target="jan">
-                                        <div class="veille-dot"></div>
-                                        <span class="veille-month">Janvier</span>
-                                    </div>
-                                    <div class="veille-dot-group" data-month="1" data-target="fev">
-                                        <div class="veille-dot"></div>
-                                        <span class="veille-month">Février</span>
-                                    </div>
-                                    <div class="veille-dot-group" data-month="2" data-target="mar">
-                                        <div class="veille-dot"></div>
-                                        <span class="veille-month">Mars</span>
-                                    </div>
 
-                                </div>
-                            </div>
-                        </div>
+                <!-- Alternance CMS Informatic -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-briefcase me-1"></i> Alternance en Entreprise</span>
+                        <span class="timeline-location"><i class="fas fa-building"></i> CMS Informatic</span>
                     </div>
+                    <h5>Développeur Web & Applicatif en Alternance</h5>
+                    <p class="small text-accent mb-2">Période : 2026 - 2027 · Villejust</p>
+                    <p class="timeline-desc">
+                        Conception, développement et maintenance applicative de solutions informatiques et d'intranets. Intégration en environnement professionnel, travail en équipe technique et prise en charge de besoins clients sur des projets réels.
+                    </p>
                 </div>
-            </section>
-            <script>
-                // Illumine uniquement le mois actuel sur la frise
-                (function () {
-                    const currentMonth = new Date().getMonth(); // 0=Jan, 1=Fév, ..., 11=Déc
-                    const dotGroups = document.querySelectorAll('.veille-dot-group');
-                    dotGroups.forEach(function (group) {
-                        const month = parseInt(group.getAttribute('data-month'));
-                        if (month === currentMonth) {
-                            group.querySelector('.veille-dot').classList.add('active');
-                            group.querySelector('.veille-month').classList.add('active');
-                        }
-                    });
-                })();
-            </script>
 
-            <!-- Bouton Résumés par mois -->
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <a href="veille.html" class="btn-resume-mois">
-                        <i class="fas fa-calendar-alt"></i> RÉSUMÉS PAR MOIS
-                    </a>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-md-8 mx-auto">
-                    <div class="card project-card p-4 text-center">
-                        <h5 class="text-white mb-3"><i class="fas fa-tools text-purple"></i> Mes outils</h5>
-                        <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <span class="badge-tool"><i class="fas fa-th-large"></i> Padlet</span>
-                            <span class="badge-tool"><i class="fas fa-bell"></i> Google Alerts</span>
-                            <span class="badge-tool"><i class="fab fa-twitter"></i> Twitter (X)</span>
-                            <span class="badge-tool"><i class="fab fa-facebook"></i> Facebook</span>
-                            <span class="badge-tool"><i class="fab fa-tiktok"></i> TikTok</span>
-                            <span class="badge-tool"><i class="fas fa-globe"></i> Internet Recherche</span>
-                        </div>
+                <!-- BTS SIO SLAM -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-graduation-cap me-1"></i> BTS SIO (SLAM)</span>
+                        <span class="timeline-location"><i class="fas fa-school"></i> Lycée Polyvalent, Cachan</span>
                     </div>
+                    <h5>BTS SIO — Option SLAM (Solutions Logicielles & Applications Métiers)</h5>
+                    <p class="small text-accent mb-2">Période : 2024 - 2026 · Diplômé avec succès</p>
+                    <p class="timeline-desc">
+                        Formation supérieure axée sur le développement logiciel : programmation orientée objet, conception web et mobile, bases de données relationnelles SQL, architectures MVC, cybersécurité applicative et validation de l'épreuve E4.
+                    </p>
                 </div>
+
+                <!-- Stage 2ème Année Lookiz -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge">Stage Professionnel · 2ème Année</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lookiz, Paris</span>
+                    </div>
+                    <h5>Développeur Web, IA Générative & Cybersécurité</h5>
+                    <p class="small text-accent mb-2">Période : 2025 - 2026</p>
+                    <p class="timeline-desc">
+                        Génération automatique d'histoires avec OpenAI, création de livres audio automatisés (Python & Audacity), audits de sécurité poussés sur la peluche connectée <em>Ary</em> (1 000 requêtes en rafale) et production de rapports de conformité PDF.
+                    </p>
+                </div>
+
+                <!-- Stage 1ère Année Lookiz -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge">Stage Professionnel · 1ère Année</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lookiz, Paris</span>
+                    </div>
+                    <h5>Développeur Web & Données JSON Multilingues</h5>
+                    <p class="small text-accent mb-2">Période : 2024 - 2025</p>
+                    <p class="timeline-desc">
+                        Conception et intégration d'un tableau de bord web interactif (HTML, CSS, JS) et développement de scripts d'automatisation Python pour analyser, filtrer et trier les bases de données JSON de la peluche IA <em>Ary</em>.
+                    </p>
+                </div>
+
+                <!-- Baccalauréat Général -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge">Baccalauréat Général</span>
+                        <span class="timeline-location"><i class="fas fa-school"></i> Lycée Albert Einstein, Sainte-Geneviève-des-Bois</span>
+                    </div>
+                    <h5>Baccalauréat Général (Mathématiques & NSI)</h5>
+                    <p class="small text-accent mb-2">Période : 2023 - 2024 · Diplômé avec succès</p>
+                    <p class="timeline-desc">
+                        Spécialités Mathématiques et Numérique & Sciences Informatiques (NSI). Approfondissement de l'algorithmique, de Python et de l'architecture matérielle des ordinateurs.
+                    </p>
+                </div>
+
+                <!-- Brevet -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-graduation-cap me-1"></i> Brevet</span>
+                        <span class="timeline-location"><i class="fas fa-school"></i> Collège Jean Macé</span>
+                    </div>
+                    <h5>Diplôme National du Brevet</h5>
+                    <p class="small text-accent mb-2">Période : 2020 - 2021 · Diplômé avec succès</p>
+                    <p class="timeline-desc">
+                        Diplôme National du Brevet obtenu au Collège Jean Macé.
+                    </p>
+                </div>
+
+                <!-- Stage découverte automobile -->
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge">Stage de découverte</span>
+                        <span class="timeline-location"><i class="fas fa-map-marker-alt"></i> Environnement automobile, Arpajon</span>
+                    </div>
+                    <h5>Stage de découverte en environnement automobile</h5>
+                    <p class="small text-accent mb-2">Période : 2020 - 2021</p>
+                    <p class="timeline-desc">
+                        Première expérience d'immersion professionnelle en environnement automobile à Arpajon.
+                    </p>
+                </div>
+
             </div>
+
         </div>
     </section>
 
-    <section id="e4" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Épreuve E4</h2>
-
-            <div class="row g-4 mb-5 align-items-center">
-                <div class="col-md-6">
-                    <h3 class="text-white">Présentation de l'épreuve</h3>
-                    <p class="text-gray">L'épreuve E4, intitulée « Support et mise à disposition de services
-                        informatiques », constitue l'un des piliers centraux de l'examen du BTS SIO. Elle a pour
-                        objectif principal de valider la capacité du candidat à concevoir, développer et déployer des
-                        solutions applicatives répondant à des besoins professionnels réels. Cette épreuve ne se limite
-                        pas à la simple écriture de code, mais englobe toute la réflexion stratégique liée à la gestion
-                        d'un projet informatique, depuis l'analyse des besoins jusqu'à la mise en production de la
-                        solution.</p>
-
-                    <p class="text-gray">Pour structurer cette présentation, le candidat s'appuie sur un <strong>tableau
-                            de synthèse</strong> rigoureux. Ce document récapitule l'intégralité des compétences
-                        techniques acquises et validées durant les deux années de formation, que ce soit lors des
-                        projets réalisés en cours ou pendant les périodes de stage en entreprise. Chaque compétence du
-                        référentiel doit être illustrée par une réalisation concrète, prouvant ainsi la polyvalence du
-                        développeur sur des sujets variés comme la gestion de bases de données ou la cybersécurité
-                        applicative.</p>
-
-                    <p class="text-gray">Le déroulement de l'épreuve se compose d'une phase de présentation orale suivie
-                        d'une démonstration technique en direct. Durant cet échange, le jury sélectionne une ou
-                        plusieurs situations professionnelles vécues par le candidat. Il s'agit alors de justifier les
-                        choix technologiques effectués, d'expliquer l'architecture du code et de répondre à des
-                        problématiques de maintenance. La réussite de cette épreuve témoigne de la maturité
-                        professionnelle de l'étudiant et de son aptitude à intégrer une équipe de développement.</p>
-                </div>
-
-                <div class="col-md-6 text-center">
-                    <img src="Photo (stage)/tableau.jpg" class="img-fluid img-standard img-tableau"
-                        alt="Tableau de synthèse">
-                </div>
+    <!-- Section Réalisations (Projets classés par catégorie) -->
+    <section id="projects" class="py-5">
+        <div class="container py-lg-4">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-laptop-code"></i> Portfolio</span>
+                <h2 class="section-title">Mes <span>Réalisations</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Découvrez mes applications, sites web et scripts développés en stage, en formation et en projets personnels.</p>
             </div>
 
-            <div class="text-center mb-5">
-                <div class="nav nav-pills justify-content-center gap-3" id="pills-tab" role="tablist">
-                    <button class="btn btn-outline-custom active" id="pills-stage1-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-stage1" type="button" role="tab">STAGE 1ER ANNEE</button>
-                    <button class="btn btn-outline-custom" id="pills-stage2-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-stage2" type="button" role="tab">STAGE 2ND ANNEE</button>
-                </div>
+            <!-- Filtres Interactifs -->
+            <div class="project-filters reveal-on-scroll">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-border-all me-1"></i> Tous</button>
+                <button class="filter-btn" data-filter="stage"><i class="fas fa-briefcase me-1"></i> Stages Lookiz</button>
+                <button class="filter-btn" data-filter="web"><i class="fas fa-globe me-1"></i> Développement Web</button>
+                <button class="filter-btn" data-filter="python"><i class="fab fa-python me-1"></i> Python & Données</button>
             </div>
 
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-stage1" role="tabpanel">
+            <!-- ═══════════════════════════════════════════════ -->
+            <!-- GROUPE 1 : Stages Lookiz (Projets Professionnels) -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <div class="projects-group-label reveal-on-scroll">
+                <i class="fas fa-building me-2"></i> Stages Professionnels — Lookiz
+            </div>
 
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 text-center">
-                                <img src="Site finaliser/images/Ary.webp" class="img-fluid img-standard"
-                                    style="object-fit: contain; background: #000;" alt="Ary Lookiz">
+            <div class="row g-4 mb-5" id="projectsGridLookiz">
+                
+                <!-- Dashboard Lookiz -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="stage web">
+                    <div class="project-card project-pro-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-chart-pie"></i></div>
+                                <span class="pro-year-badge">Stage · 2024-2025</span>
                             </div>
-                            <div class="col-md-8">
-                                <h3 class="text-white">L'entreprise : Lookiz</h3>
-                                <p class="text-gray">Lookiz est une start-up spécialisée dans l'IA et l'enfance. J'ai
-                                    travaillé sur <strong>Ary</strong>, une peluche interactive qui utilise le
-                                    traitement du langage naturel pour discuter avec les enfants, les aider dans leurs
-                                    apprentissages et stimuler leur curiosité.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <h4 class="text-purple mb-4">1. Structuration des données JSON</h4>
-                        <div class="task-description">
-                            <p class="text-gray"><strong>C'est quoi ?</strong> Le JSON (JavaScript Object Notation) est
-                                un format de données léger et structuré, très utilisé pour échanger des informations
-                                entre un serveur et une application.</p>
-                            <p class="text-gray"><strong>Mon rôle :</strong> J'ai dû organiser des centaines de sujets
-                                éducatifs. J'ai rédigé les contenus en français, puis je les ai traduits en anglais,
-                                espagnol et allemand. J'ai intégré la gestion du <code>recommendedAge</code> pour
-                                filtrer les sujets selon l'âge de l'enfant et j'ai corrigé les erreurs de syntaxe pour
-                                garantir le bon fonctionnement de la peluche.</p>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4"><img
-                                    src="Photo (stage)/Fichier Json ( finalisation des améliorations).png"
-                                    class="img-fluid img-standard" alt="JSON FR"></div>
-                            <div class="col-md-4"><img src="Photo (stage)/traduit en en (Json).png"
-                                    class="img-fluid img-standard" alt="JSON EN"></div>
-                            <div class="col-md-4"><img
-                                    src="Photo (stage)/modification du Json avec des recommendedAge.PNG"
-                                    class="img-fluid img-standard" alt="JSON Age"></div>
-                        </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <h4 class="text-purple mb-4">2. Scripts d'automatisation Python (Thonny)</h4>
-
-                        <div class="mb-5">
-                            <h5 class="text-white">Programme 1</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Ce programme conçu pour
-                                permettre une visualisation rapide et optimale des données spécifiques à travers toute
-                                la base JSON.</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> Pour gagner du temps, j'ai créé un
-                                script de recherche par mot-clé précis permettant de filtrer instantanément les
-                                informations pertinentes dans un volume massif de fichiers.</p>
-                            <div class="row g-3">
-                                <div class="col-md-6"><img src="Photo (stage)/1er programme.PNG"
-                                        class="img-fluid img-standard" alt="Python Script 1"></div>
-                                <div class="col-md-6"><img src="Photo (stage)/résultat du 1er programme.PNG"
-                                        class="img-fluid img-standard" alt="Résultat 1"></div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <h5 class="text-white">Programme 2</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Ce second programme sert à analyser
-                                en détail les catégories et à améliorer l'optimisation globale du contenu éducatif.</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> J'ai développé un outil de calcul
-                                automatique qui recense le nombre de sujets par thématique (ex: "Espace", "Animaux")
-                                afin de garantir un équilibre parfait et une organisation optimale de la base.</p>
-                            <div class="row g-3">
-                                <div class="col-md-6"><img src="Photo (stage)/2eme programme.png"
-                                        class="img-fluid img-standard" alt="Python Script 2"></div>
-                                <div class="col-md-6"><img src="Photo (stage)/résultat du 2eme programme.png"
-                                        class="img-fluid img-standard" alt="Résultat 2"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light">
-                        <h4 class="text-purple mb-4">3. Développement du Dashboard Web</h4>
-
-                        <div class="mb-5">
-                            <h5 class="text-white">HTML (La Structure)</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> L'HTML définit le contenu et
-                                l'organisation sémantique des pages web (titres, menus, sections).</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> J'ai structuré le tableau de bord
-                                pour qu'il soit clair, en créant des zones dédiées aux statistiques et à la sélection
-                                des langues.</p>
-                            <div class="row g-3">
-                                <div class="col-md-6"><img src="Photo (stage)/html (final).png"
-                                        class="img-fluid img-standard" alt="HTML Code"></div>
-                                <div class="col-md-6"><img src="Photo (stage)/le site (Final).png"
-                                        class="img-fluid img-standard" alt="Rendu Web"></div>
-                            </div>
-                        </div>
-
-                        <div class="mb-5">
-                            <h5 class="text-white">CSS (Le Design)</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Le CSS permet de mettre en forme le
-                                HTML (couleurs, polices, espacements, animations).</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> J'ai conçu une interface moderne avec
-                                un mode sombre. J'ai utilisé Flexbox pour aligner les éléments et j'ai ajouté des
-                                bordures lumineuses pour mettre en avant les catégories de sujets.</p>
-                            <div class="row g-3">
-                                <div class="col-md-6"><img src="Photo (stage)/css (Final).png"
-                                        class="img-fluid img-standard" alt="CSS Code"></div>
-                                <div class="col-md-6"><img src="Photo (stage)/Catégorie + sujet.png"
-                                        class="img-fluid img-standard" alt="Rendu Design"></div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <h5 class="text-white">JavaScript (L'Interactivité)</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Le JavaScript est le langage qui
-                                rend les pages web "vivantes". Il permet d'ajouter des actions dynamiques sans recharger
-                                la page.</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> Je l'ai utilisé pour charger
-                                dynamiquement les données JSON dans le site. Grâce à lui, l'utilisateur peut changer de
-                                langue instantanément ou voir les graphiques de statistiques se mettre à jour en temps
-                                réel.</p>
-                            <div class="row g-3">
-                                <div class="col-md-6"><img src="Photo (stage)/java (Final).png"
-                                        class="img-fluid img-standard" alt="JS Code"></div>
-                                <div class="col-md-6"><img src="Photo (stage)/Hub des Langues (2 langues).png"
-                                        class="img-fluid img-standard" alt="Rendu JS"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="pills-stage2" role="tabpanel">
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <div class="row align-items-center">
-                            <div class="col-md-4 text-center">
-                                <img src="Site finaliser/images/Ary.webp" class="img-fluid img-standard"
-                                    style="object-fit: contain; background: #000;" alt="Ary Lookiz">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 class="text-white">Le retour chez Lookiz</h3>
-                                <p class="text-gray">C'est avec un immense plaisir que j'ai été accueilli pour une
-                                    seconde
-                                    immersion chez <strong>Lookiz</strong>. Depuis mon premier passage, la start-up a
-                                    franchi une
-                                    étape majeure en devenant une référence de l'IA éducative en France.</p>
-                                <p class="text-gray">Portée par une visibilité médiatique impressionnante sur des
-                                    chaînes comme
-                                    <strong>M6</strong>, <strong>LCI</strong> ou encore <strong>France 2
-                                        (Télématin)</strong>,
-                                    l'entreprise a su prouver la pertinence de sa peluche <strong>Ary</strong>. Son
-                                    concept innovant,
-                                    mélangeant intelligence artificielle et apprentissage sans écran, a séduit un large
-                                    public,
-                                    propulsant la start-up sur le devant de la scène technologique française.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <h4 class="text-purple mb-4">1. Programme python</h4>
-                        <div class="task-description">
-                            <p class="text-gray"><strong>C'est quoi ?</strong> Un script Python utilisant l'IA pour
-                                transformer des concepts bruts en histoires structurées. Le programme produit des objets
-                                JSON complexes segmentant chaque récit par attributs (titre, résumé, fiche personnages).
+                            <h5 class="card-title">Dashboard Web Lookiz</h5>
+                            <span class="project-role-tag"><i class="fas fa-building me-1"></i> Lookiz — Interface & Données</span>
+                            <p class="card-text">
+                                Tableau de bord complet permettant de visualiser en temps réel les statistiques d'utilisation, les thématiques et les langues de la peluche IA <strong>Ary</strong>.
                             </p>
-                            <p class="text-gray"><strong>Mon rôle :</strong> J'ai conçu la logique de standardisation
-                                des données et intégré un système dynamique de gestion de fichiers qui organise chaque
-                                récit dans un dossier propre tout en automatisant le nettoyage du répertoire.</p>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Programme_python.png"
-                                    class="img-fluid img-standard" alt="Programme Python">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Resultat_programme_python.png"
-                                    class="img-fluid img-standard" alt="Résultat Programme Python">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Programme_python.png"
-                                    class="img-fluid img-standard" alt="Standardisation Python">
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">HTML5</span>
+                                <span class="badge-tool-sm">CSS3</span>
+                                <span class="badge-tool-sm">JavaScript</span>
+                                <span class="badge-tool-sm">JSON</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <h4 class="text-purple mb-4">2. Système Éducatif et un Rapports PDF</h4>
-                        <div class="task-description">
-                            <p class="text-gray"><strong>C'est quoi ?</strong> Un programme dédié à la création de
-                                leçons pour enfants (mathématiques, géographie) à partir de blocs de connaissances
-                                vérifiés, incluant la génération automatique de rapports d'analyse au format PDF.</p>
-                            <p class="text-gray"><strong>Mon rôle :</strong> J'ai développé les fonctions éducatives de
-                                l'IA et implémenté la librairie de génération PDF pour assurer une traçabilité claire
-                                des leçons et des résultats des tests de sécurité.</p>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/pdf.png" class="img-fluid img-standard"
-                                    alt="Analyse PDF">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Dossier_bench.png" class="img-fluid img-standard"
-                                    alt="Système Éducatif">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/500_pdf_python.png" class="img-fluid img-standard"
-                                    alt="Génération rapports PDF">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light mb-5">
-                        <h4 class="text-purple mb-4">3. Connecter le programme a de la musique et a des voix</h4>
-
-                        <div class="mb-5">
-                            <h5 class="text-white">Le programme avec les musiques</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Une solution multimédia qui
-                                synchronise une narration vocale avec des musiques de fond calibrées pour transformer un
-                                récit texte en un livre audio immersif complet.</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> J'ai utilisé Audacity pour préparer
-                                la bibliothèque audio et développé le code Python capable de mixer automatiquement les
-                                pistes musicales adaptées à l'ambiance de chaque histoire.</p>
-                            <div class="row g-3">
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Audacity_musique.png"
-                                        class="img-fluid img-standard" alt="Audacity Musique">
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Dossier musique.png"
-                                        class="img-fluid img-standard" alt="Dossier Musique">
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Programme musique.png"
-                                        class="img-fluid img-standard" alt="Programme Musique">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <h5 class="text-white">Le programme avec les voix</h5>
-                            <p class="text-gray small"><strong>C'est quoi ?</strong> Un système automatisé d'exportation
-                                de "packs multimédias" associant les données JSON riches à un fichier MP3 final où la
-                                voix narrative est parfaitement intégrée.</p>
-                            <p class="text-gray small"><strong>Mon rôle :</strong> J'ai mis en place la logique
-                                d'insertion de la voix narrative et assuré le mariage fluide entre narration et ambiance
-                                sonore pour une expérience utilisateur riche et vivante.</p>
-                            <div class="row g-3">
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Audacity_voix.png"
-                                        class="img-fluid img-standard" alt="Audacity Voix">
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Dossier_voix.png"
-                                        class="img-fluid img-standard" alt="Dossier Voix">
-                                </div>
-                                <div class="col-md-4">
-                                    <img src="Photo (stage - 2eme annee)/Programme_voix.png"
-                                        class="img-fluid img-standard" alt="Programme Voix">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card project-card p-4 border-purple-light">
-                        <h4 class="text-purple mb-4">4. Cyber Test de Ary et un Dialogue avec l'IA</h4>
-                        <div class="task-description">
-                            <p class="text-gray"><strong>C'est quoi ?</strong> Un audit de sécurité poussé via des tests
-                                de stress massifs (1 000 requêtes), couplé à un système de dialogue entre deux IA pour
-                                la détection d'incohérences.</p>
-                            <p class="text-gray"><strong>Mon rôle :</strong> J'ai programmé la batterie de tests pour
-                                identifier les failles du système et synchronisé les échanges IA-to-IA en JSON pour
-                                garantir la fiabilité des réponses générées.</p>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Cyber_viseul.V2.png" class="img-fluid img-standard"
-                                    alt="Visuel Cyber V2">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Cyber_visuel.png" class="img-fluid img-standard"
-                                    alt="Audit Cloud Cyber">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="Photo (stage - 2eme annee)/Programme_cyber.png" class="img-fluid img-standard"
-                                    alt="Programme Cyber">
-                            </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="Site finaliser/dashboard.html" target="_blank" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-external-link-alt"></i> Ouvrir le Dashboard
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Automatisation Python Lookiz -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="stage python">
+                    <div class="project-card project-pro-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-bolt"></i></div>
+                                <span class="pro-year-badge">Stage · 2024-2025</span>
+                            </div>
+                            <h5 class="card-title">Automatisation & Parsing JSON</h5>
+                            <span class="project-role-tag"><i class="fas fa-building me-1"></i> Lookiz — Scripts Thonny</span>
+                            <p class="card-text">
+                                Scripts Python créés pour parser des centaines de fichiers JSON : recherche de mots-clés, calcul de volumétrie thématique et détection d'erreurs d'attributs.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">Python</span>
+                                <span class="badge-tool-sm">Parsing JSON</span>
+                                <span class="badge-tool-sm">Automatisation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="e4.html#pills-stage1" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-eye"></i> Voir dans Épreuve E4
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IA Récits & Livres Audio -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="stage python">
+                    <div class="project-card project-pro-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-robot"></i></div>
+                                <span class="pro-year-badge">Stage · 2025-2026</span>
+                            </div>
+                            <h5 class="card-title">IA Récits & Livres Audio</h5>
+                            <span class="project-role-tag"><i class="fas fa-building me-1"></i> Lookiz — OpenAI & Audio</span>
+                            <p class="card-text">
+                                Chaîne de production complète : génération automatisée d'histoires pour enfants via l'IA, mixage sonore avec voix et musiques de fond immersives (Python & Audacity).
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">Python</span>
+                                <span class="badge-tool-sm">OpenAI API</span>
+                                <span class="badge-tool-sm">Audacity</span>
+                                <span class="badge-tool-sm">Audio MP3</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="e4.html#pills-stage2" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-eye"></i> Voir dans Épreuve E4
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Cybersécurité -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="stage python">
+                    <div class="project-card project-cyber-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box text-accent"><i class="fas fa-shield-virus"></i></div>
+                                <span class="pro-year-badge">Stage · 2025-2026</span>
+                            </div>
+                            <h5 class="card-title">Audit Cybersécurité d'IA</h5>
+                            <span class="project-role-tag"><i class="fas fa-shield-alt me-1"></i> Tests de Robustesse Applicative</span>
+                            <p class="card-text">
+                                Batterie de tests de stress (1 000 requêtes), simulation de dialogue IA-to-IA pour repérer les failles et génération de rapports de conformité PDF.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">Stress Test</span>
+                                <span class="badge-tool-sm">IA-to-IA</span>
+                                <span class="badge-tool-sm">PDF Automatisé</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="e4.html#pills-stage2" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-eye"></i> Voir dans Épreuve E4
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!-- GROUPE 2 : Projets Personnels Web -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <div class="projects-group-label reveal-on-scroll">
+                <i class="fas fa-globe me-2"></i> Projets Personnels — Développement Web
+            </div>
+
+            <div class="row g-4 mb-5" id="projectsGridWeb">
+                
+                <!-- Système Solaire -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="web">
+                    <div class="project-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-sun"></i></div>
+                                <span class="pro-year-badge">Projet Web</span>
+                            </div>
+                            <h5 class="card-title">Système Solaire Éducatif</h5>
+                            <span class="project-role-tag"><i class="fas fa-graduation-cap me-1"></i> Site Scientifique & Pédagogique</span>
+                            <p class="card-text">
+                                Plateforme interactive et animée présentant le système solaire, les planètes, les missions spatiales (Apollo, Mars Rover) et les grandes figures de l'astronomie.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">HTML5 / CSS3</span>
+                                <span class="badge-tool-sm">Multi-pages</span>
+                                <span class="badge-tool-sm">Animation UI</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="Projet info/index.html" target="_blank" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-external-link-alt"></i> Visiter le site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patrimoine Portugais -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="web">
+                    <div class="project-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-monument"></i></div>
+                                <span class="pro-year-badge">Projet Web</span>
+                            </div>
+                            <h5 class="card-title">Patrimoine Portugais</h5>
+                            <span class="project-role-tag"><i class="fas fa-compass me-1"></i> Site Vitrine Culturel</span>
+                            <p class="card-text">
+                                Site vitrine responsive dédié à la culture, à la gastronomie et aux villes emblématiques du Portugal (Sintra, Óbidos, Algarve) conçu avec la librairie Bootstrap.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">Bootstrap 5</span>
+                                <span class="badge-tool-sm">Responsive</span>
+                                <span class="badge-tool-sm">CSS Moderne</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="Portugal (Projet)/index.html" target="_blank" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-external-link-alt"></i> Visiter le site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ═══════════════════════════════════════════════ -->
+            <!-- GROUPE 3 : Python & Données -->
+            <!-- ═══════════════════════════════════════════════ -->
+            <div class="projects-group-label reveal-on-scroll">
+                <i class="fab fa-python me-2"></i> Projets Python & Données
+            </div>
+
+            <div class="row g-4" id="projectsGridPython">
+                
+                <!-- Jeu Vidéo Python -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="python">
+                    <div class="project-card reveal-on-scroll">
+                        <div>
+                            <div class="project-card-top">
+                                <div class="project-icon-box"><i class="fas fa-gamepad"></i></div>
+                                <span class="pro-year-badge">Python / Jeu</span>
+                            </div>
+                            <h5 class="card-title">Jeu Vidéo Interactif</h5>
+                            <span class="project-role-tag"><i class="fas fa-terminal me-1"></i> Algorithmique & Interface Graphique</span>
+                            <p class="card-text">
+                                Conception d'un jeu vidéo interactif programmé en Python avec gestion de boucles d'événements, collisions, système de score et interface graphique dédiée.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge-tool-sm">Python</span>
+                                <span class="badge-tool-sm">Tkinter / GUI</span>
+                                <span class="badge-tool-sm">Logique de Jeu</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer pt-2">
+                            <a href="Jeux vidéos/index.html" target="_blank" class="btn btn-purple-visit w-100 justify-content-center">
+                                <i class="fas fa-play-circle"></i> Découvrir le jeu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
-    <footer class="text-center py-5 border-top border-secondary mt-5">
-        <p class="text-gray">© 2026 Alexis FARIA</p>
+    <!-- Section BTS SIO (SLAM) : Veille & Épreuve E4 -->
+    <section id="bts-sio" class="py-5 bg-surface-alt">
+        <div class="container py-lg-4">
+            
+            <div class="section-header reveal-on-scroll">
+                <span class="section-pill"><i class="fas fa-folder-open"></i> Dossiers d'évaluation</span>
+                <h2 class="section-title">BTS SIO <span>(SLAM)</span></h2>
+                <p class="section-subtitle section-subtitle-highlight">Retrouvez mes deux dossiers officiels d'évaluation : la veille technologique médicale et l'épreuve pratique E4.</p>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Veille Technologique -->
+                <div class="col-lg-6">
+                    <div class="card project-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between reveal-on-scroll">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="project-icon-box">
+                                    <i class="fas fa-satellite-dish text-accent"></i>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-gold-light px-3 py-2 rounded-pill fw-bold small">
+                                    Veille Informatique
+                                </span>
+                            </div>
+                            <h3 class="fw-bold bts-card-title text-white mb-2">Veille Technologique</h3>
+                            <p class="text-accent fw-semibold mb-3">L'IA dans le diagnostic médical</p>
+                            <p class="text-white-readable mb-4">
+                                Surveillance active de l'apport du <strong>Deep Learning</strong> et de l'imagerie médicale assistée par ordinateur. Retrouvez tous mes résumés mensuels (FDA, GE Healthcare, etc.) et le suivi de mes sources d'information.
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge-tool-sm"><i class="fas fa-calendar me-1"></i> Décembre 2025</span>
+                                <span class="badge-tool-sm"><i class="fas fa-calendar me-1"></i> Janvier 2026</span>
+                                <span class="badge-tool-sm"><i class="fas fa-calendar me-1"></i> Février 2026</span>
+                                <span class="badge-tool-sm"><i class="fas fa-calendar me-1"></i> Mars 2026</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="veille.html" class="btn btn-purple-main w-100 justify-content-center py-3">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Accéder à la Veille Technologique
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Épreuve E4 -->
+                <div class="col-lg-6">
+                    <div class="card project-card p-4 p-md-5 h-100 d-flex flex-column justify-content-between reveal-on-scroll">
+                        <div>
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="project-icon-box">
+                                    <i class="fas fa-award text-accent"></i>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-gold-light px-3 py-2 rounded-pill fw-bold small">
+                                    Épreuve Professionnelle
+                                </span>
+                            </div>
+                            <h3 class="fw-bold bts-card-title text-white mb-2">Épreuve E4</h3>
+                            <p class="text-accent fw-semibold mb-3">Support & mise à disposition de services informatiques</p>
+                            <p class="text-white-readable mb-4">
+                                Dossier complet comprenant le <strong>Tableau de Synthèse officiel</strong> et mes deux stages chez <strong>Lookiz</strong> (IA éducative Ary, scripts Python d'automatisation, mixage audio et audits de cybersécurité).
+                            </p>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge-tool-sm"><i class="fas fa-table me-1"></i> Tableau de Synthèse</span>
+                                <span class="badge-tool-sm"><i class="fas fa-building me-1"></i> Stage 1ère Année</span>
+                                <span class="badge-tool-sm"><i class="fas fa-rocket me-1"></i> Stage 2ème Année</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="e4.html" class="btn btn-purple-main w-100 justify-content-center py-3">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Consulter le Dossier Épreuve E4
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section-header reveal-on-scroll mt-5 mb-4" id="diplomes-certifications">
+                <h3 class="section-title fs-3">Diplômes & <span>certifications</span></h3>
+                <p class="section-subtitle section-subtitle-highlight">Mes diplômes et certifications, du plus récent au plus ancien.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-certificate me-1"></i> Certification obtenue</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2026</span>
+                    </div>
+                    <h5>Certification TOSA VBA Excel</h5>
+                    <p class="timeline-desc">Certification réussie en VBA sur Microsoft Excel.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-graduation-cap me-1"></i> Diplôme obtenu</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2024 - 2026</span>
+                    </div>
+                    <h5>BTS SIO — Option SLAM</h5>
+                    <p class="timeline-desc">BTS Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-laptop me-1"></i> Parcours Pix</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2ème année de BTS · 2025-2026</span>
+                    </div>
+                    <h5>Pix — parcours réalisé pendant le BTS</h5>
+                    <p class="timeline-desc">Parcours Pix effectué en 2026.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-certificate me-1"></i> Formation validée</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2ème année de BTS · 2025-2026</span>
+                    </div>
+                    <h5>Formation OpenClassrooms en cybersécurité</h5>
+                    <p class="timeline-desc">Formation suivie et validée en 2025.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-certificate me-1"></i> Formation validée</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2ème année de BTS · 2025-2026</span>
+                    </div>
+                    <h5>Formation OpenClassrooms en HTML et CSS (front-end)</h5>
+                    <p class="timeline-desc">Formation front-end suivie et validée en 2025.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-certificate me-1"></i> Formation validée</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2ème année de BTS · 2025-2026</span>
+                    </div>
+                    <h5>Formation OpenClassrooms sur Git et GitHub</h5>
+                    <p class="timeline-desc">Formation suivie et validée en 2025.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-graduation-cap me-1"></i> Diplôme obtenu</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2023 - 2024</span>
+                    </div>
+                    <h5>Baccalauréat général</h5>
+                    <p class="timeline-desc">Spécialités Mathématiques et Numérique et Sciences Informatiques (NSI).</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-certificate me-1"></i> Certification obtenue</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2023 - 2024</span>
+                    </div>
+                    <h5>Certification Pix</h5>
+                    <p class="timeline-desc">Certification Pix obtenue pendant 2024.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-id-card me-1"></i> Journée effectuée</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2023 - 2024</span>
+                    </div>
+                    <h5>Journée Défense et Citoyenneté (JDC)</h5>
+                    <p class="timeline-desc">Journée effectuée en 2024.</p>
+                </div>
+
+                <div class="timeline-item reveal-on-scroll">
+                    <div class="timeline-meta">
+                        <span class="timeline-badge"><i class="fas fa-graduation-cap me-1"></i> Diplôme obtenu</span>
+                        <span class="timeline-location"><i class="fas fa-calendar-check"></i> 2020 - 2021</span>
+                    </div>
+                    <h5>Diplôme National du Brevet</h5>
+                    <p class="timeline-desc">Brevet obtenu en 2021.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Lightbox Universel pour Zoomer les Images -->
+    <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content custom-modal">
+                <div class="modal-header custom-modal-header d-flex justify-content-between align-items-center">
+                    <h5 class="modal-title fw-bold text-heading fs-6" id="lightboxModalLabel">Aperçu Technique</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body custom-modal-body">
+                    <img src="" id="lightboxModalImg" class="img-fluid" alt="Capture agrandie">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTopBtn" title="Retourner en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="footer-brand mb-2">
+                ALEXIS<span>.FARIA</span>
+            </div>
+            <p class="small text-white mb-3">
+                Étudiant en L3 Pro DAWI à l'Université Évry Paris-Saclay & Alternant chez CMS Informatic · Portfolio Professionnel
+            </p>
+            <div class="footer-links mb-3">
+                <a href="#home"><i class="fas fa-home text-accent"></i> Accueil</a>
+                <a href="#about"><i class="fas fa-user text-accent"></i> À Propos</a>
+                <a href="#parcours"><i class="fas fa-graduation-cap text-accent"></i> Parcours</a>
+                <a href="#projects"><i class="fas fa-laptop-code text-accent"></i> Réalisations</a>
+                <a href="#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a>
+                <a href="#bts-sio"><i class="fas fa-folder-open text-accent"></i> Dossier d'évaluation</a>
+                <a href="veille.html"><i class="fas fa-satellite-dish text-accent"></i> Veille Technologique</a>
+                <a href="e4.html"><i class="fas fa-award text-accent"></i> Épreuve E4</a>
+                <a href="contact.html" class="text-accent"><i class="fas fa-paper-plane"></i> Contact</a>
+            </div>
+            <div class="footer-social-icons mb-4">
+                <a href="https://www.instagram.com/neivho" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/alexisf129768" target="_blank" title="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100008358485232" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="contact.html" title="Email"><i class="fas fa-envelope text-accent"></i></a>
+            </div>
+            <p class="small text-white mb-0">
+                © 2026 Alexis FARIA · Tous droits réservés.
+            </p>
+        </div>
     </footer>
 
+    <!-- Scripts Bootstrap 5 & Scripts Interactifs -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ─── Navbar scroll effect ───
+        const navbar = document.getElementById('mainNav');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        window.addEventListener('scroll', () => {
+            // Navbar shrink
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                backToTopBtn.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTopBtn.classList.remove('visible');
+            }
+            // Scroll progress bar
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (height > 0) {
+                scrollProgress.style.width = (winScroll / height * 100) + '%';
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ─── Scroll Reveal (IntersectionObserver) ───
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // ─── Project Filters ───
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        const categories = item.getAttribute('data-category').split(' ');
+                        item.style.display = categories.includes(filterValue) ? 'block' : 'none';
+                    }
+                });
+
+                // Show/hide group labels
+                document.querySelectorAll('.projects-group-label').forEach(label => {
+                    if (filterValue === 'all') {
+                        label.style.display = 'block';
+                    } else {
+                        label.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ─── Lightbox ───
+        const lightboxModalEl = document.getElementById('imageLightboxModal');
+        const lightboxModal = new bootstrap.Modal(lightboxModalEl);
+        const modalImg = document.getElementById('lightboxModalImg');
+        const modalTitle = document.getElementById('lightboxModalLabel');
+
+        document.querySelectorAll('.lightbox-trigger, .img-standard, .img-tableau').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImg.src = img.src;
+                modalTitle.textContent = img.alt || "Aperçu technique du projet";
+                lightboxModal.show();
+            });
+        });
+
+        // ─── Veille month highlight ───
+        (function () {
+            const currentMonth = new Date().getMonth();
+            document.querySelectorAll('.veille-dot-group').forEach(group => {
+                const month = parseInt(group.getAttribute('data-month'));
+                if (month === currentMonth) {
+                    group.querySelector('.veille-dot')?.classList.add('active');
+                    group.querySelector('.veille-month')?.classList.add('active');
+                }
+            });
+        })();
+
+        // ─── Smooth scroll for anchor links ───
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        // Close mobile navbar if open
+                        const navCollapse = document.getElementById('navbarNav');
+                        if (navCollapse.classList.contains('show')) {
+                            new bootstrap.Collapse(navCollapse).hide();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

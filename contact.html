@@ -3,103 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Alexis FARIA</title>
+    <title>Contact | Alexis FARIA — Développeur Web & Applicatif</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Style Principal -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black">
+<body class="bg-body-warm contact-page">
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
+    <!-- Barre de Navigation Sticky avec Menu Déroulant BTS SIO -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar" id="mainNav">
         <div class="container-fluid px-lg-5">
-            <a class="navbar-brand fw-bold" href="index.html">PORTFOLIO<span>.</span></a>
-            <div class="ms-auto">
-                <a href="index.html" class="btn btn-outline-custom border-purple-light btn-sm">
-                    <i class="fas fa-arrow-left"></i> Retour à l'accueil
-                </a>
+            <a class="navbar-brand" href="index.html">
+                ALEXIS <span>FARIA</span>
+                <span class="brand-badge d-none d-sm-inline-block">L3 PRO DAWI · PARIS-SACLAY</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu de navigation">
+                <i class="fas fa-bars-staggered text-heading fs-4"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about"><i class="fas fa-user"></i> À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#parcours"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects"><i class="fas fa-laptop-code"></i> Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#diplomes-certifications"><i class="fas fa-certificate text-accent"></i> Diplômes & Certifications</a></li>
+                    
+                    <!-- Menu Déroulant BTS SIO (SLAM) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarBtsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-graduation-cap text-accent"></i> BTS SIO (SLAM)
+                        </a>
+                        <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarBtsDropdown">
+                            <li>
+                                <a class="dropdown-item" href="index.html#bts-sio">
+                                    <i class="fas fa-folder-open"></i> Dossier d'évaluation
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="veille.html">
+                                    <i class="fas fa-satellite-dish"></i> Veille Technologique
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="e4.html">
+                                    <i class="fas fa-award"></i> Épreuve E4
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-contact-purple active text-center" href="contact.html">
+                            <i class="fas fa-paper-plane me-1"></i> Contact
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <section class="py-5 hero-section d-flex align-items-center" style="height: auto; min-height: 90vh;">
+    <!-- Section Formulaire de Contact -->
+    <section class="py-5 hero-section d-flex align-items-center" style="min-height: 85vh;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="card project-card p-4 p-md-5 border-purple-light shadow-lg">
+                    <div class="card project-card p-4 p-md-5 border-color shadow-lg">
                         
                         <div class="text-center mb-5">
-                            <h2 class="display-5 fw-bold text-white">Me <span class="text-purple">Contacter</span></h2>
-                            <p class="text-gray">Un projet, une question ou une opportunité d'alternance ? Envoyez-moi un message.</p>
+                            <span class="section-pill mb-2"><i class="fas fa-envelope-open-text"></i> Échangeons</span>
+                            <h2 class="display-6 fw-bold text-heading">Me <span class="text-gradient">Contacter</span></h2>
+                            <p class="section-subtitle-highlight mb-0">Un projet, une question ou une opportunité d'alternance / d'embauche ? Envoyez-moi un message.</p>
                         </div>
 
                         <div class="row g-5">
-                            <div class="col-md-5 border-end border-secondary border-opacity-25">
+                            
+                            <!-- Coordonnées & Réseaux -->
+                            <div class="col-md-5 contact-divider">
                                 <div class="mb-5 text-start">
-                                    <h5 class="text-white mb-4 small text-uppercase fw-bold">Coordonnées</h5>
+                                    <h5 class="section-subtitle-highlight mb-4 small text-uppercase fw-bold">
+                                        <i class="fas fa-address-card me-2"></i> Coordonnées
+                                    </h5>
                                     <div class="d-flex align-items-center mb-3">
-                                        <div class="icon-box me-3"><i class="fas fa-envelope text-purple"></i></div>
-                                        <p class="mb-0 text-gray small">alexis.faria2006@gmail.com</p>
+                                        <div class="icon-box me-3"><i class="fas fa-envelope text-accent"></i></div>
+                                        <div>
+                                            <div class="small text-accent">Email professionnel</div>
+                                            <a href="mailto:alexis.faria2006@gmail.com" class="fw-semibold text-heading text-decoration-none">alexis.faria2006@gmail.com</a>
+                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center mb-3">
-                                        <div class="icon-box me-3"><i class="fas fa-phone text-purple"></i></div>
-                                        <p class="mb-0 text-gray small">+33 7 68 47 55 23</p>
+                                        <div class="icon-box me-3"><i class="fas fa-phone text-accent"></i></div>
+                                        <div>
+                                            <div class="small text-accent">Téléphone</div>
+                                            <a href="tel:+33768475523" class="fw-semibold text-heading text-decoration-none">+33 7 68 47 55 23</a>
+                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                        <div class="icon-box me-3"><i class="fas fa-map-marker-alt text-purple"></i></div>
-                                        <p class="mb-0 text-gray small">Sainte-Geneviève-des-Bois 91700, France</p>
+                                        <div class="icon-box me-3"><i class="fas fa-map-marker-alt text-accent"></i></div>
+                                        <div>
+                                            <div class="small text-accent">Localisation</div>
+                                            <span class="fw-semibold text-heading">Sainte-Geneviève-des-Bois (91700), France</span>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="mt-5 text-start">
-                                    <h5 class="text-white mb-4 small text-uppercase fw-bold">Réseaux Sociaux</h5>
+                                <div class="mt-4 text-start">
+                                    <h5 class="section-subtitle-highlight mb-3 small text-uppercase fw-bold">
+                                        <i class="fas fa-share-nodes me-2"></i> Réseaux & Liens
+                                    </h5>
                                     <div class="social-column">
-                                        <a href="https://www.instagram.com/neivho" target="_blank" class="social-link mb-3 d-flex align-items-center text-decoration-none">
-                                            <i class="fa-brands fa-instagram text-purple me-2"></i>
-                                            <span class="text-gray small">@neivho</span>
+                                        <a href="https://www.instagram.com/neivho" target="_blank" class="social-link">
+                                            <i class="fab fa-instagram"></i>
+                                            <span>@neivho (Instagram)</span>
                                         </a>
-                                        <a href="https://twitter.com/alexisf129768" target="_blank" class="social-link mb-3 d-flex align-items-center text-decoration-none">
-                                            <i class="fa-brands fa-x-twitter text-purple me-2"></i>
-                                            <span class="text-gray small">@alexisf129768</span>
+                                        <a href="https://twitter.com/alexisf129768" target="_blank" class="social-link">
+                                            <i class="fab fa-x-twitter"></i>
+                                            <span>@alexisf129768 (X / Twitter)</span>
                                         </a>
-                                        <a href="https://www.facebook.com/profile.php?id=100008358485232" target="_blank" class="social-link d-flex align-items-center text-decoration-none">
-                                            <i class="fa-brands fa-facebook text-purple me-2"></i>
-                                            <span class="text-gray small">Faria Alexis</span>
+                                        <a href="https://www.facebook.com/profile.php?id=100008358485232" target="_blank" class="social-link">
+                                            <i class="fab fa-facebook"></i>
+                                            <span>Alexis FARIA (Facebook)</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Formulaire de contact Formspree -->
                             <div class="col-md-7">
                                 <form action="https://formspree.io/f/xojvgrvl" method="POST">
                                     <div class="row g-4 text-start">
                                         <div class="col-md-6">
-                                            <label class="form-label text-white-50 small">Votre Nom</label>
+                                            <label class="form-label small">Votre Nom & Prénom</label>
                                             <input type="text" name="name" class="form-control custom-input" placeholder="Ex: Jean Dupont" required>
                                         </div>
-                                         <div class="col-md-6">
-                                            <label class="form-label text-white-50 small">Votre Email</label>
+                                        <div class="col-md-6">
+                                            <label class="form-label small">Votre Adresse Email</label>
                                             <input type="email" name="_replyto" class="form-control custom-input" placeholder="nom@exemple.com" required>
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label text-white-50 small">Sujet</label>
-                                            <input type="text" name="subject" class="form-control custom-input" placeholder="Objet de votre message">
+                                            <label class="form-label small">Objet du message</label>
+                                            <input type="text" name="subject" class="form-control custom-input" placeholder="Ex: Proposition d'alternance / Échange">
                                         </div>
                                         <div class="col-12">
-                                            <label class="form-label text-white-50 small">Message</label>
-                                            <textarea name="message" class="form-control custom-input" rows="5" placeholder="Comment puis-je vous aider ?" required></textarea>
+                                            <label class="form-label small">Votre Message</label>
+                                            <textarea name="message" class="form-control custom-input" rows="5" placeholder="Bonjour Alexis, je vous contacte suite à la visite de votre portfolio..." required></textarea>
                                         </div>
                                         
-                                        <input type="hidden" name="_subject" value="Nouveau message de votre Portfolio">
+                                        <input type="hidden" name="_subject" value="Nouveau message depuis votre Portfolio">
                                         
                                         <div class="col-12 mt-4">
-                                            <button type="submit" class="btn btn-purple-main w-100 py-3 shadow-sm">
+                                            <button type="submit" class="btn btn-purple-main w-100 py-3 shadow-sm justify-content-center">
                                                 Envoyer le message <i class="fas fa-paper-plane ms-2"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -107,8 +173,9 @@
         </div>
     </section>
 
-    <footer class="text-center py-4">
-        <p class="text-gray small opacity-50">© 2026 Alexis FARIA - Tous droits réservés</p>
+    <!-- Footer -->
+    <footer class="text-center py-4 border-top border-light">
+        <p class="text-white-fixed small mb-0">© 2026 Alexis FARIA · Tous droits réservés</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
